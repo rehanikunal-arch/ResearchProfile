@@ -1,99 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Profile</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f7f7f7;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #697eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 3rem 0;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            background-color: white;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CDMS Research Hub | Western Sydney University</title>
+
+  <style>
+    :root {
+      --wsu-red: #990033;
+      --dark: #1f1f1f;
+      --light: #f7f7f7;
+      --white: #ffffff;
+      --grey: #666;
+      --border: #e4e4e4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--wsu-red);
+      color: white;
+      padding: 28px 40px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    nav {
+      background: #111;
+      padding: 12px 40px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 22px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 25px;
+      padding: 30px 40px;
+    }
+
+    aside, section {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    aside h2, section h2 {
+      color: var(--wsu-red);
+      margin-bottom: 15px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 15px;
+    }
+
+    button {
+      background: var(--wsu-red);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #7a0028;
+    }
+
+    .hero {
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 900px;
+      color: var(--grey);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      background: #fff;
+    }
+
+    .card h3 {
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .card a {
+      display: inline-block;
+      color: var(--wsu-red);
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f4e5eb;
+      color: var(--wsu-red);
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: var(--grey);
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      nav, header {
+        padding: 20px;
+      }
+
+      nav a {
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Research Profile</h1>
-        <p>Welcome to my research portal</p>
-    </header>
-    
-    <div class="container">
-        <section>
-            <h2>About</h2>
-            <p>This is a research profile page. Add your research information, publications, and projects here.</p>
-        </section>
-        
-        <section>
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Research Area 1</li>
-                <li>Research Area 2</li>
-                <li>Research Area 3</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Publications</h2>
-            <p>Your publications will be listed here.</p>
-        </section>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 Research Profile. All rights reserved.</p>
-    </footer>
+
+  <header>
+    <h1>School of Computer, Data and Mathematical Sciences</h1>
+    <p>Western Sydney University | Research, HDR Supervision and PhD Research Profiles</p>
+  </header>
+
+  <nav>
+    <a href="https://www.westernsydney.edu.au/schools/socdms" target="_blank">CDMS Home</a>
+    <a href="https://www.westernsydney.edu.au/schools/socdms/research" target="_blank">Research</a>
+    <a href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research" target="_blank">Higher Degree Research</a>
+    <a href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor" target="_blank">Find a Supervisor</a>
+    <a href="https://www.westernsydney.edu.au/schools/socdms/our-people" target="_blank">Our People</a>
+  </nav>
+
+  <div class="layout">
+
+    <aside>
+      <h2>Search CDMS</h2>
+      <p>Search for supervisors, research topics, HDR projects or academic profiles.</p>
+
+      <input id="searchInput" type="text" placeholder="Example: health data, AI, statistics" />
+      <button onclick="searchSite()">Search WSU CDMS</button>
+
+      <br><br>
+
+      <h2>Quick Links</h2>
+      <p><a href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor" target="_blank">Supervisor List</a></p>
+      <p><a href="https://www.westernsydney.edu.au/future/study/how-to-apply/higher-degree-research-candidates/find-a-supervisor" target="_blank">Available Research Projects</a></p>
+      <p><a href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/" target="_blank">WSU Researcher Profiles</a></p>
+      <p><a href="https://www.westernsydney.edu.au/schools/socdms/contact-us" target="_blank">Contact CDMS</a></p>
+    </aside>
+
+    <main>
+
+      <section class="hero">
+        <h2>CDMS Research Hub</h2>
+        <p>
+          This page provides a simple research-facing gateway for the School of Computer,
+          Data and Mathematical Sciences at Western Sydney University. It brings together
+          supervisor discovery, ongoing research areas, HDR information and PhD researcher profiles.
+        </p>
+      </section>
+
+      <section>
+        <h2>Undergoing Research Project Areas</h2>
+
+        <div class="grid">
+          <div class="card">
+            <span class="tag">Digital Health</span>
+            <h3>Longitudinal Health Data Analytics</h3>
+            <p>Research using repeated patient measures, digital health platforms and statistical modelling.</p>
+            <a href="https://www.westernsydney.edu.au/schools/socdms/research" target="_blank">View CDMS Research</a>
+          </div>
+
+          <div class="card">
+            <span class="tag">AI</span>
+            <h3>Artificial Intelligence and Machine Learning</h3>
+            <p>Research in intelligent systems, machine learning, explainable AI and applied computing.</p>
+            <a href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/" target="_blank">Explore Research Profiles</a>
+          </div>
+
+          <div class="card">
+            <span class="tag">Statistics</span>
+            <h3>Mathematics and Statistical Modelling</h3>
+            <p>Research in statistical methods, computational modelling, uncertainty and applied mathematics.</p>
+            <a href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research" target="_blank">HDR Research Information</a>
+          </div>
+        </div>
+      </section>
+
+      <br>
+
+      <section>
+        <h2>PhD Researcher Profiles</h2>
+
+        <div class="grid">
+          <div class="card">
+            <span class="tag">PhD Researcher</span>
+            <h3>Kunal Rehani</h3>
+            <p>Research focus: longitudinal health data, digital health interventions, mixed-effects modelling and healthcare analytics.</p>
+            <a href="https://rehanikunal-arch.github.io/ResearchProfile/" target="_blank">View Profile</a>
+          </div>
+
+          <div class="card">
+            <span class="tag">Add Profile</span>
+            <h3>PhD Researcher Name</h3>
+            <p>Add research area, school affiliation, supervisor and publication/profile link here.</p>
+            <a href="https://researchers.westernsydney.edu.au/" target="_blank">Profile Link</a>
+          </div>
+
+          <div class="card">
+            <span class="tag">Add Profile</span>
+            <h3>PhD Researcher Name</h3>
+            <p>Add research area, project title, keywords and contact/profile link here.</p>
+            <a href="https://www.westernsydney.edu.au/schools/socdms/our-people" target="_blank">Profile Link</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    Unofficial research profile page for CDMS-related HDR navigation. For official information, visit Western Sydney University.
+  </footer>
+
+  <script>
+    function searchSite() {
+      const query = document.getElementById("searchInput").value.trim();
+
+      if (!query) {
+        alert("Please enter a search term.");
+        return;
+      }
+
+      const searchUrl =
+        "https://www.google.com/search?q=" +
+        encodeURIComponent(query + " site:westernsydney.edu.au/schools/socdms OR site:researchers.westernsydney.edu.au");
+
+      window.open(searchUrl, "_blank");
+    }
+  </script>
+
 </body>
 </html>

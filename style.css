@@ -1,29 +1,194 @@
-/* =========================
+/* =========================================================
    GLOBAL VARIABLES
-   ========================= */
+   ========================================================= */
 
 :root {
-  --wsu-red: #990134;
-  --grey: #666;
+  --wsu-red: #990033;
+  --wsu-red-dark: #7a0028;
+  --dark: #1f1f1f;
+  --light: #f7f7f7;
+  --white: #ffffff;
+  --grey: #666666;
   --border: #e4e4e4;
 }
 
 
-/* =========================
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   HEADER / BANNER
+   ========================================================= */
+
+header {
+  position: relative;
+  min-height: 350px;
+  padding: 45px 40px;
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(72, 0, 24, 0.93) 0%,
+      rgba(153, 0, 51, 0.78) 42%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    url("images/cdms-banner.webp");
+
+  background-size: cover;
+  background-position: center 38%;
+  background-repeat: no-repeat;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+}
+
+header h1 {
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.15;
+  margin-bottom: 14px;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+header p {
+  font-size: 18px;
+  max-width: 760px;
+
+  text-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+  background: #111111;
+  padding: 12px 40px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 22px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   MAIN PAGE LAYOUT
+   ========================================================= */
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 25px;
+  padding: 30px 40px;
+}
+
+aside,
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+aside h2,
+section h2 {
+  color: var(--wsu-red);
+  margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+input,
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+
+  border-radius: 8px;
+  border: 1px solid var(--border);
+
+  font-size: 15px;
+}
+
+input:focus {
+  outline: 2px solid rgba(153, 0, 51, 0.18);
+  border-color: var(--wsu-red);
+}
+
+button {
+  background: var(--wsu-red);
+  color: white;
+
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: var(--wsu-red-dark);
+}
+
+
+/* =========================================================
    SUPERVISOR DIRECTORY
-   ========================= */
+   ========================================================= */
 
 .supervisor-finder {
   margin-top: 28px;
   padding-top: 22px;
-  border-top: 1px solid var(--border);
+
+  border-top:
+    1px solid var(--border);
 }
+
+
+/* FIND A SUPERVISOR RED HEADING */
 
 .supervisor-finder h2 {
   background: var(--wsu-red);
   color: white;
+
   padding: 10px 12px;
   margin-bottom: 10px;
+
   border-radius: 6px;
   border-bottom: none;
 }
@@ -37,145 +202,301 @@
 .supervisor-select {
   width: 100%;
   padding: 12px;
-  border: 1px solid var(--border);
+
+  border:
+    1px solid var(--border);
+
   border-radius: 8px;
+
   background: white;
+  color: var(--dark);
+
   font-size: 14px;
   cursor: pointer;
 }
 
+.supervisor-select:focus {
+  outline:
+    2px solid rgba(153, 0, 51, 0.18);
 
-/* =========================
-   SUPERVISOR POPUP
-   ========================= */
-
-.supervisor-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.65);
-  padding: 30px 15px;
-  overflow-y: auto;
+  border-color:
+    var(--wsu-red);
 }
 
-.supervisor-modal-content {
+
+/* =========================================================
+   HERO / INTRODUCTION
+   ========================================================= */
+
+.hero {
+  margin-bottom: 25px;
+}
+
+.hero p {
+  max-width: 900px;
+  color: var(--grey);
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(260px, 1fr)
+    );
+
+  gap: 18px;
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+  border:
+    1px solid var(--border);
+
+  border-radius: 12px;
+
+  padding: 18px;
   background: white;
-  max-width: 850px;
-  max-height: 88vh;
-  overflow-y: auto;
-  margin: auto;
-  border-radius: 14px;
-  position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
-
-/* =========================
-   SUPERVISOR PROFILE HEADER
-   ========================= */
-
-.supervisor-profile-header {
-  background: var(--wsu-red);
-  color: white;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  border-radius: 14px 14px 0 0;
-}
-
-.supervisor-photo {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  background: #eee;
-}
-
-.supervisor-profile-header h2 {
-  color: white;
-  margin: 0 0 5px 0;
-}
-
-.supervisor-profile-header p {
-  margin: 0;
-}
-
-
-/* =========================
-   SUPERVISOR PROFILE BODY
-   ========================= */
-
-.supervisor-body {
-  padding: 30px;
-}
-
-.supervisor-body h3 {
-  color: var(--wsu-red);
-  margin-top: 22px;
+.card h3 {
+  color: var(--dark);
   margin-bottom: 8px;
 }
 
-.supervisor-body h3:first-child {
-  margin-top: 0;
+.card p {
+  color: var(--grey);
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
-.supervisor-body ul,
-.supervisor-body ol {
-  margin-left: 22px;
-  margin-top: 8px;
-}
+.card a {
+  display: inline-block;
 
-.supervisor-body a {
   color: var(--wsu-red);
+
   font-weight: bold;
   text-decoration: none;
+
+  margin-top: 5px;
 }
 
-.supervisor-body a:hover {
+.card a:hover {
   text-decoration: underline;
 }
 
 
-/* =========================
-   SUPERVISION BADGES
-   ========================= */
+/* =========================================================
+   TAGS
+   ========================================================= */
 
-.supervision-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
+.tag {
+  display: inline-block;
 
-.supervision-badge {
   background: #f4e5eb;
   color: var(--wsu-red);
-  padding: 6px 11px;
+
+  padding: 5px 9px;
+
   border-radius: 20px;
-  font-size: 13px;
-  font-weight: bold;
+
+  font-size: 12px;
+
+  margin-bottom: 10px;
 }
 
 
-/* =========================
+/* =========================================================
+   PHD RESEARCHER CARDS
+   ========================================================= */
+
+.researcher-header {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+.researcher-image {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border:
+    3px solid var(--wsu-red);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SUPERVISOR MODAL BACKGROUND
+   ========================================================= */
+
+.supervisor-modal {
+  display: none;
+
+  position: fixed;
+
+  z-index: 9999;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 30px 15px;
+
+  background:
+    rgba(0, 0, 0, 0.68);
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   SUPERVISOR POPUP
+   ========================================================= */
+
+.supervisor-modal-content {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  max-height: 90vh;
+
+  margin: 0 auto;
+
+  background: white;
+
+  border-radius: 14px;
+
+  overflow-y: auto;
+
+  box-shadow:
+    0 15px 50px
+    rgba(0, 0, 0, 0.4);
+
+  animation:
+    supervisorFadeIn
+    0.25s ease;
+}
+
+@keyframes supervisorFadeIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   SUPERVISOR PROFILE HEADER
+   ========================================================= */
+
+.supervisor-profile-header {
+  background:
+    linear-gradient(
+      135deg,
+      #990033,
+      #55001d
+    );
+
+  color: white;
+
+  padding: 32px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  border-radius:
+    14px 14px 0 0;
+}
+
+.supervisor-photo {
+  width: 125px;
+  height: 125px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border:
+    4px solid white;
+
+  background: #eeeeee;
+
+  flex-shrink: 0;
+}
+
+.supervisor-profile-header h2 {
+  color: white;
+
+  font-size: 30px;
+
+  margin-bottom: 4px;
+}
+
+.supervisor-profile-header p {
+  color: white;
+
+  font-size: 16px;
+
+  opacity: 0.95;
+}
+
+
+/* =========================================================
    CLOSE BUTTON
-   ========================= */
+   ========================================================= */
 
 .close-supervisor {
   position: absolute;
+
   right: 18px;
-  top: 12px;
+  top: 8px;
+
   color: white;
-  font-size: 34px;
-  font-weight: bold;
+
+  font-size: 36px;
+  font-weight: normal;
+
   cursor: pointer;
-  z-index: 2;
+
+  line-height: 1;
+
+  z-index: 5;
 }
 
 .close-supervisor:hover {
@@ -183,110 +504,294 @@
 }
 
 
-/* =========================
-   MOBILE SUPERVISOR PROFILE
-   ========================= */
+/* =========================================================
+   SUPERVISOR PROFILE BODY
+   ========================================================= */
 
-@media (max-width: 600px) {
+.supervisor-body {
+  padding:
+    30px 34px 38px;
+}
+
+.supervisor-body h3 {
+  color: var(--wsu-red);
+
+  margin-top: 25px;
+  margin-bottom: 9px;
+
+  font-size: 19px;
+}
+
+.supervisor-body h3:first-child {
+  margin-top: 0;
+}
+
+.supervisor-body p {
+  color: #444444;
+
+  margin-bottom: 10px;
+}
+
+.supervisor-body ul,
+.supervisor-body ol {
+  margin-left: 22px;
+  margin-top: 8px;
+
+  color: #444444;
+}
+
+.supervisor-body li {
+  padding-left: 5px;
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   SUPERVISION BADGES
+   ========================================================= */
+
+.supervision-badges {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 10px;
+}
+
+.supervision-badge {
+  display: inline-block;
+
+  background: #f4e5eb;
+
+  color: var(--wsu-red);
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   SUPERVISOR PROFILE LINKS
+   ========================================================= */
+
+.supervisor-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.supervisor-links a {
+  display: inline-block;
+
+  padding: 9px 14px;
+
+  background:
+    var(--wsu-red);
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.supervisor-links a:hover {
+  background:
+    var(--wsu-red-dark);
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   DEMONSTRATION PROFILE NOTICE
+   ========================================================= */
+
+.demo-notice {
+  background: #fff6e5;
+
+  border-left:
+    4px solid #d18a00;
+
+  padding: 12px 14px;
+
+  margin-bottom: 20px;
+
+  border-radius: 5px;
+
+  color: #555555;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   QUICK LINKS
+   ========================================================= */
+
+aside a {
+  color: var(--wsu-red);
+
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  text-align: center;
+
+  padding: 25px;
+
+  color: var(--grey);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  header {
+    min-height: 260px;
+
+    padding: 30px 20px;
+
+    background-position: center;
+  }
+
+  header h1 {
+    font-size: 31px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+
+  /* NAVIGATION */
+
+  nav {
+    padding: 20px;
+  }
+
+  nav a {
+    display: block;
+
+    margin-right: 0;
+
+    margin-bottom: 8px;
+  }
+
+
+  /* PAGE */
+
+  .layout {
+    grid-template-columns: 1fr;
+
+    padding: 20px;
+  }
+
+
+  /* SUPERVISOR POPUP */
 
   .supervisor-modal {
     padding: 15px 10px;
   }
 
   .supervisor-modal-content {
-    max-height: 92vh;
+    max-height: 94vh;
   }
 
   .supervisor-profile-header {
     flex-direction: column;
+
     text-align: center;
+
+    padding:
+      35px 20px 25px;
   }
 
   .supervisor-photo {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .supervisor-profile-header h2 {
+    font-size: 25px;
   }
 
   .supervisor-body {
-    padding: 20px;
+    padding: 22px;
   }
+
+  .supervisor-links {
+    flex-direction: column;
+  }
+
+  .supervisor-links a {
+    text-align: center;
+  }
+
 }
 
 
-/* =========================
-   MAIN WEBSITE
-   ========================= */
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  background: #f7f7f7;
-  color: #111;
-}
+@media (max-width: 500px) {
 
+  header {
+    min-height: 230px;
+    padding: 25px 18px;
+  }
 
-/* =========================
-   HEADER
-   ========================= */
+  header h1 {
+    font-size: 27px;
+  }
 
-header {
-  background: linear-gradient(135deg, #990134, #111);
-  color: white;
-  padding: 60px 30px;
-  text-align: center;
-}
+  header p {
+    font-size: 15px;
+  }
 
-header h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
+  .layout {
+    padding: 15px;
+  }
 
-header p {
-  font-size: 18px;
-  margin: 0;
-}
+  aside,
+  section {
+    padding: 18px;
+  }
 
+  .grid {
+    grid-template-columns: 1fr;
+  }
 
-/* =========================
-   SECTIONS
-   ========================= */
+  .supervisor-finder h2 {
+    font-size: 19px;
+  }
 
-section {
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 30px;
-  border-left: 8px solid #990134;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-}
-
-
-/* =========================
-   HEADINGS
-   ========================= */
-
-h2 {
-  color: #990134;
-  border-bottom: 2px solid #990134;
-  padding-bottom: 8px;
-}
-
-
-/* =========================
-   LISTS
-   ========================= */
-
-ul {
-  line-height: 1.8;
-}
-
-
-/* =========================
-   LINKS
-   ========================= */
-
-a {
-  color: #990134;
-  font-weight: bold;
 }

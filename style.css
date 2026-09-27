@@ -1,4 +1,15 @@
 /* =========================
+   GLOBAL VARIABLES
+   ========================= */
+
+:root {
+  --wsu-red: #990134;
+  --grey: #666;
+  --border: #e4e4e4;
+}
+
+
+/* =========================
    SUPERVISOR DIRECTORY
    ========================= */
 
@@ -43,6 +54,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.65);
   padding: 30px 15px;
+  overflow-y: auto;
 }
 
 .supervisor-modal-content {
@@ -53,8 +65,13 @@
   margin: auto;
   border-radius: 14px;
   position: relative;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
+
+
+/* =========================
+   SUPERVISOR PROFILE HEADER
+   ========================= */
 
 .supervisor-profile-header {
   background: var(--wsu-red);
@@ -83,6 +100,11 @@
 .supervisor-profile-header p {
   margin: 0;
 }
+
+
+/* =========================
+   SUPERVISOR PROFILE BODY
+   ========================= */
 
 .supervisor-body {
   padding: 30px;
@@ -114,6 +136,11 @@
   text-decoration: underline;
 }
 
+
+/* =========================
+   SUPERVISION BADGES
+   ========================= */
+
 .supervision-badges {
   display: flex;
   flex-wrap: wrap;
@@ -130,6 +157,11 @@
   font-weight: bold;
 }
 
+
+/* =========================
+   CLOSE BUTTON
+   ========================= */
+
 .close-supervisor {
   position: absolute;
   right: 18px;
@@ -145,7 +177,20 @@
   opacity: 0.7;
 }
 
+
+/* =========================
+   MOBILE SUPERVISOR PROFILE
+   ========================= */
+
 @media (max-width: 600px) {
+
+  .supervisor-modal {
+    padding: 15px 10px;
+  }
+
+  .supervisor-modal-content {
+    max-height: 92vh;
+  }
 
   .supervisor-profile-header {
     flex-direction: column;
@@ -161,12 +206,23 @@
     padding: 20px;
   }
 }
+
+
+/* =========================
+   MAIN WEBSITE
+   ========================= */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   background: #f7f7f7;
   color: #111;
 }
+
+
+/* =========================
+   HEADER
+   ========================= */
 
 header {
   background: linear-gradient(135deg, #990134, #111);
@@ -185,6 +241,11 @@ header p {
   margin: 0;
 }
 
+
+/* =========================
+   SECTIONS
+   ========================= */
+
 section {
   max-width: 900px;
   margin: 30px auto;
@@ -192,8 +253,13 @@ section {
   padding: 30px;
   border-left: 8px solid #990134;
   border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
+
+
+/* =========================
+   HEADINGS
+   ========================= */
 
 h2 {
   color: #990134;
@@ -201,9 +267,19 @@ h2 {
   padding-bottom: 8px;
 }
 
+
+/* =========================
+   LISTS
+   ========================= */
+
 ul {
   line-height: 1.8;
 }
+
+
+/* =========================
+   LINKS
+   ========================= */
 
 a {
   color: #990134;

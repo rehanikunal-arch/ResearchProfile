@@ -289,13 +289,57 @@
         aria-label="Search CDMS"
       />
 
-      <button type="button" onclick="searchSite()">
-        Search WSU CDMS
-      </button>
+     <button type="button" onclick="searchSite()">
+  Search WSU CDMS
+</button>
 
-      <br><br>
 
-      <h2>Quick Links</h2>
+<!-- =========================
+     FIND A SUPERVISOR
+     ========================= -->
+
+<div class="supervisor-finder">
+
+  <h2>Find a Supervisor</h2>
+
+  <p>
+    Select a supervisor to view their research interests,
+    projects and supervision availability.
+  </p>
+
+  <select
+    id="supervisorSelect"
+    class="supervisor-select"
+    onchange="openSupervisorProfile(this.value)"
+  >
+
+    <option value="">
+      Select a Supervisor
+    </option>
+
+    <option value="kenan">
+      Kenan M. Matawie
+    </option>
+
+    <option value="supervisor2">
+      Dr Sarah Williams
+    </option>
+
+    <option value="supervisor3">
+      Dr Michael Chen
+    </option>
+
+    <option value="supervisor4">
+      Dr Emily Taylor
+    </option>
+
+  </select>
+
+</div>
+
+<br>
+
+<h2>Quick Links</h2>
 
       <p>
         <a href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor" target="_blank" rel="noopener noreferrer">

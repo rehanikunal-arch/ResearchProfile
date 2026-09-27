@@ -20,7 +20,12 @@
 }
 
 .supervisor-finder h2 {
-  margin-bottom: 6px;
+  background: var(--wsu-red);
+  color: white;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border-bottom: none;
 }
 
 .supervisor-finder p {

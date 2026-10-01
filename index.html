@@ -3,12 +3,12 @@
 
 <head>
 
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
-  />
+  >
 
   <title>
     CDMS Research Hub | Western Sydney University
@@ -26,13 +26,13 @@
 
 
   <!-- =====================================================
-       ADDITIONAL PAGE STYLES
+       PAGE-SPECIFIC STYLES
        ===================================================== -->
 
   <style>
 
     /* =====================================================
-       SIDEBAR CONTROLS
+       SIDEBAR
        ===================================================== */
 
     .supervisor-finder {
@@ -44,76 +44,269 @@
 
     .supervisor-select,
     .search-button {
-
       display: block;
-
       width: 100%;
       height: 46px;
-
       padding: 0 12px;
-
       border-radius: 8px;
-
       font-size: 14px;
-
       box-sizing: border-box;
-
     }
 
 
     .supervisor-select {
-
       border: 1px solid var(--border);
-
       background: white;
-
       color: var(--dark);
-
       cursor: pointer;
-
     }
 
 
     .search-button {
-
       border: none;
-
       background: var(--wsu-red);
-
       color: white;
-
       font-weight: bold;
-
       cursor: pointer;
-
     }
 
 
     .search-button:hover {
-
       background: var(--wsu-red-dark);
-
     }
 
 
     .sidebar-section {
-
       margin-top: 28px;
-
       padding-top: 22px;
-
       border-top: 1px solid var(--border);
-
     }
 
 
 
     /* =====================================================
-       CARD ACTIONS
+       ROTATING TOP BANNER
+       ===================================================== */
+
+    header.banner-slider {
+      position: relative;
+
+      min-height: 350px;
+
+      padding: 45px 40px;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      color: white;
+
+      background: none !important;
+      background-image: none !important;
+
+      isolation: isolate;
+    }
+
+
+    .banner-slide {
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 0;
+
+      opacity: 0;
+
+      background-size: cover;
+
+      background-position: center 38%;
+
+      background-repeat: no-repeat;
+
+      transition:
+        opacity 1.35s ease-in-out,
+        transform 6s ease;
+
+      transform: scale(1.01);
+    }
+
+
+    .banner-slide.active {
+      opacity: 1;
+      transform: scale(1.035);
+    }
+
+
+
+    /* -----------------------------------------------------
+       VARIANT 1
+       CLASSIC WSU RED
+       ----------------------------------------------------- */
+
+    .banner-slide-1 {
+      background-image:
+
+        linear-gradient(
+          90deg,
+          rgba(72, 0, 24, 0.94) 0%,
+          rgba(153, 0, 51, 0.78) 42%,
+          rgba(60, 0, 25, 0.28) 72%,
+          rgba(0, 0, 0, 0.14) 100%
+        ),
+
+        url("images/cdms-banner.webp");
+
+      filter:
+        saturate(1.05)
+        contrast(1.03);
+    }
+
+
+
+    /* -----------------------------------------------------
+       VARIANT 2
+       DEEP WSU MAROON / PLUM
+       ----------------------------------------------------- */
+
+    .banner-slide-2 {
+      background-image:
+
+        linear-gradient(
+          110deg,
+          rgba(55, 0, 28, 0.95) 0%,
+          rgba(105, 10, 55, 0.82) 40%,
+          rgba(145, 0, 55, 0.48) 70%,
+          rgba(25, 5, 18, 0.22) 100%
+        ),
+
+        url("images/cdms-banner.webp");
+
+      filter:
+        saturate(0.96)
+        contrast(1.07)
+        brightness(0.94);
+    }
+
+
+
+    /* -----------------------------------------------------
+       VARIANT 3
+       CHARCOAL + WSU RED
+       ----------------------------------------------------- */
+
+    .banner-slide-3 {
+      background-image:
+
+        linear-gradient(
+          105deg,
+          rgba(24, 22, 24, 0.92) 0%,
+          rgba(68, 15, 40, 0.76) 40%,
+          rgba(153, 0, 51, 0.42) 70%,
+          rgba(20, 20, 20, 0.18) 100%
+        ),
+
+        url("images/cdms-banner.webp");
+
+      filter:
+        saturate(0.82)
+        contrast(1.08)
+        brightness(0.92);
+    }
+
+
+
+    /* -----------------------------------------------------
+       BANNER TEXT
+       ----------------------------------------------------- */
+
+    header.banner-slider .header-content {
+      position: relative;
+
+      z-index: 5;
+
+      max-width: 900px;
+    }
+
+
+    header.banner-slider .header-content h1 {
+      position: relative;
+
+      z-index: 5;
+
+      margin-top: 0;
+
+      text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.55);
+    }
+
+
+    header.banner-slider .header-content p {
+      position: relative;
+
+      z-index: 5;
+
+      text-shadow:
+        0 2px 7px rgba(0, 0, 0, 0.50);
+    }
+
+
+
+    /* -----------------------------------------------------
+       BANNER INDICATORS
+       ----------------------------------------------------- */
+
+    .banner-indicators {
+      position: absolute;
+
+      z-index: 10;
+
+      left: 40px;
+      bottom: 22px;
+
+      display: flex;
+
+      gap: 8px;
+    }
+
+
+    .banner-indicator {
+      width: 9px;
+      height: 9px;
+
+      padding: 0;
+
+      border: 1px solid rgba(255, 255, 255, 0.8);
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 255, 255, 0.30);
+
+      cursor: pointer;
+
+      transition:
+        width 0.25s ease,
+        border-radius 0.25s ease,
+        background 0.25s ease;
+    }
+
+
+    .banner-indicator.active {
+      width: 27px;
+
+      border-radius: 8px;
+
+      background: #ffffff;
+    }
+
+
+
+    /* =====================================================
+       CARD ACTION LINKS
        ===================================================== */
 
     .card-actions {
-
       display: flex;
 
       flex-wrap: wrap;
@@ -121,12 +314,10 @@
       gap: 10px;
 
       margin-top: 16px;
-
     }
 
 
     .card-actions a {
-
       display: inline-flex;
 
       align-items: center;
@@ -144,25 +335,21 @@
       font-weight: 700;
 
       box-sizing: border-box;
-
     }
 
 
     .card-actions .contact-link {
-
-      border: 1px solid var(--wsu-red);
+      border:
+        1px solid var(--wsu-red);
 
       background: white;
 
       color: var(--wsu-red);
-
     }
 
 
     .card-actions .contact-link:hover {
-
       background: #fff3f7;
-
     }
 
 
@@ -172,7 +359,6 @@
        ===================================================== */
 
     .supervisor-contact {
-
       display: flex;
 
       align-items: center;
@@ -182,12 +368,10 @@
       gap: 12px;
 
       margin-bottom: 24px;
-
     }
 
 
     .supervisor-contact-button {
-
       display: inline-flex;
 
       align-items: center;
@@ -211,38 +395,32 @@
       transition:
         background 0.2s ease,
         transform 0.2s ease;
-
     }
 
 
     .supervisor-contact-button:hover {
-
       background: var(--wsu-red-dark);
 
-      transform: translateY(-1px);
-
+      transform:
+        translateY(-1px);
     }
 
 
     .supervisor-email-text {
-
       color: #666666;
 
       font-size: 14px;
 
       word-break: break-word;
-
     }
 
 
     .supervisor-contact-unavailable {
-
       margin: 0;
 
       color: #777777;
 
       font-size: 14px;
-
     }
 
 
@@ -252,7 +430,6 @@
        ===================================================== */
 
     .cdms-search-modal {
-
       position: fixed;
 
       inset: 0;
@@ -266,39 +443,34 @@
       justify-content: center;
 
       padding: 24px;
-
     }
 
 
     .cdms-search-modal.active {
-
       display: flex;
-
     }
 
 
     .cdms-search-backdrop {
-
       position: absolute;
 
       inset: 0;
 
       background:
-        rgba(0, 0, 0, 0.58);
+        rgba(0, 0, 0, 0.60);
 
       backdrop-filter:
         blur(3px);
-
     }
 
 
     .cdms-search-dialog {
-
       position: relative;
 
       z-index: 6001;
 
-      width: min(760px, 100%);
+      width:
+        min(760px, 100%);
 
       max-height: 90vh;
 
@@ -315,25 +487,22 @@
       box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.28);
-
     }
 
 
     .cdms-search-close {
-
       position: absolute;
 
       top: 14px;
-
       right: 18px;
 
       width: 42px;
-
       height: 42px;
 
       border: none;
 
-      background: transparent;
+      background:
+        transparent;
 
       color: #555555;
 
@@ -342,97 +511,85 @@
       line-height: 1;
 
       cursor: pointer;
-
     }
 
 
     .cdms-search-close:hover {
-
-      color: var(--wsu-red);
-
+      color:
+        var(--wsu-red);
     }
 
 
     .cdms-search-header {
-
       padding-right: 48px;
 
       margin-bottom: 25px;
-
     }
 
 
     .cdms-search-header h2 {
+      margin:
+        0 0 8px;
 
-      margin: 0 0 8px;
-
-      color: var(--wsu-red);
+      color:
+        var(--wsu-red);
 
       font-size: 30px;
-
     }
 
 
     .cdms-search-header p {
-
       margin: 0;
 
       color: #555555;
 
       line-height: 1.55;
-
     }
 
 
     .cdms-search-form {
-
       display: grid;
 
       grid-template-columns:
         1fr 1fr;
 
       gap: 18px;
-
     }
 
 
     .cdms-search-field {
-
       display: flex;
 
       flex-direction: column;
 
       gap: 7px;
-
     }
 
 
     .cdms-search-field.full-width {
-
-      grid-column: 1 / -1;
-
+      grid-column:
+        1 / -1;
     }
 
 
     .cdms-search-field label {
-
-      color: var(--dark);
+      color:
+        var(--dark);
 
       font-size: 14px;
 
       font-weight: 700;
-
     }
 
 
     .cdms-search-field input,
     .cdms-search-field select {
-
       width: 100%;
 
       min-height: 48px;
 
-      padding: 11px 13px;
+      padding:
+        11px 13px;
 
       border:
         1px solid #cfcfcf;
@@ -441,18 +598,17 @@
 
       background: white;
 
-      color: var(--dark);
+      color:
+        var(--dark);
 
       font-size: 15px;
 
       box-sizing: border-box;
-
     }
 
 
     .cdms-search-field input:focus,
     .cdms-search-field select:focus {
-
       outline: none;
 
       border-color:
@@ -461,26 +617,23 @@
       box-shadow:
         0 0 0 3px
         rgba(153, 0, 51, 0.10);
-
     }
 
 
     .cdms-search-actions {
-
-      grid-column: 1 / -1;
+      grid-column:
+        1 / -1;
 
       display: flex;
 
       gap: 12px;
 
       margin-top: 3px;
-
     }
 
 
     .cdms-primary-search,
     .cdms-reset-search {
-
       min-height: 50px;
 
       border-radius: 8px;
@@ -490,33 +643,28 @@
       font-weight: 700;
 
       cursor: pointer;
-
     }
 
 
     .cdms-primary-search {
-
       flex: 1;
 
       border: none;
 
-      background: var(--wsu-red);
+      background:
+        var(--wsu-red);
 
       color: white;
-
     }
 
 
     .cdms-primary-search:hover {
-
       background:
         var(--wsu-red-dark);
-
     }
 
 
     .cdms-reset-search {
-
       min-width: 110px;
 
       border:
@@ -524,85 +672,70 @@
 
       background: white;
 
-      color: var(--dark);
-
+      color:
+        var(--dark);
     }
 
 
     .cdms-reset-search:hover {
-
-      background: #f5f5f5;
-
+      background:
+        #f5f5f5;
     }
 
 
 
     /* =====================================================
-       SEARCH POPUP OFFICIAL LINKS
+       SEARCH POPUP LINKS
        ===================================================== */
 
     .cdms-search-links,
     .cdms-search-contacts {
-
       margin-top: 24px;
 
       padding-top: 20px;
 
       border-top:
         1px solid var(--border);
-
     }
 
 
     .cdms-search-links h3,
     .cdms-search-contacts h3 {
-
       margin:
         0 0 12px;
 
       color:
         var(--dark);
 
-      font-size:
-        17px;
-
+      font-size: 17px;
     }
 
 
     .cdms-link-grid {
-
       display: flex;
 
       flex-wrap: wrap;
 
       gap:
         10px 18px;
-
     }
 
 
     .cdms-link-grid a {
-
       color:
         var(--wsu-red);
 
-      font-size:
-        14px;
+      font-size: 14px;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
-      text-decoration:
-        none;
-
+      text-decoration: none;
     }
 
 
     .cdms-link-grid a:hover {
-
       text-decoration:
         underline;
-
     }
 
 
@@ -612,16 +745,13 @@
        ===================================================== */
 
     .cdms-contact-list {
-
       display: grid;
 
       gap: 10px;
-
     }
 
 
     .cdms-contact-row {
-
       display: flex;
 
       align-items: center;
@@ -636,35 +766,28 @@
 
       border-bottom:
         1px solid #eeeeee;
-
     }
 
 
     .cdms-contact-row:last-child {
-
       border-bottom: none;
-
     }
 
 
     .cdms-contact-person {
-
       min-width: 0;
-
     }
 
 
     .cdms-contact-person strong {
-
       display: block;
 
-      color: var(--dark);
-
+      color:
+        var(--dark);
     }
 
 
     .cdms-contact-person span {
-
       display: block;
 
       margin-top: 3px;
@@ -672,15 +795,15 @@
       color: #666666;
 
       font-size: 13px;
-
     }
 
 
     .cdms-contact-button {
+      flex:
+        0 0 auto;
 
-      flex: 0 0 auto;
-
-      display: inline-flex;
+      display:
+        inline-flex;
 
       align-items: center;
 
@@ -699,23 +822,17 @@
       color:
         var(--wsu-red);
 
-      font-size:
-        14px;
+      font-size: 14px;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
-      text-decoration:
-        none;
-
+      text-decoration: none;
     }
 
 
     .cdms-contact-button:hover {
-
       background:
         #fff3f7;
-
     }
 
 
@@ -727,85 +844,114 @@
     @media
     (max-width: 640px) {
 
+      header.banner-slider {
+        min-height: 280px;
+
+        padding:
+          30px 20px;
+      }
+
+
+      .banner-slide {
+        background-position:
+          center center;
+      }
+
+
+      .banner-indicators {
+        left: 20px;
+
+        bottom: 15px;
+      }
+
+
+      header.banner-slider
+      .header-content h1 {
+        font-size: 29px;
+      }
+
+
+      header.banner-slider
+      .header-content p {
+        font-size: 15px;
+      }
+
 
       .cdms-search-modal {
-
         padding: 12px;
-
       }
 
 
       .cdms-search-dialog {
-
         padding:
           26px 20px;
 
-        border-radius:
-          10px;
-
+        border-radius: 10px;
       }
 
 
       .cdms-search-header h2 {
-
-        font-size:
-          25px;
-
+        font-size: 25px;
       }
 
 
       .cdms-search-form {
-
         grid-template-columns:
           1fr;
-
       }
 
 
       .cdms-search-field.full-width,
       .cdms-search-actions {
-
         grid-column:
           auto;
-
       }
 
 
       .cdms-search-actions {
-
         flex-direction:
           column;
-
       }
 
 
       .cdms-reset-search {
-
         min-height:
           46px;
-
       }
 
 
       .cdms-contact-row {
-
         align-items:
           flex-start;
 
         flex-direction:
           column;
-
       }
 
 
       .supervisor-contact {
-
         align-items:
           flex-start;
 
         flex-direction:
           column;
+      }
 
+    }
+
+
+
+    /* =====================================================
+       REDUCED MOTION ACCESSIBILITY
+       ===================================================== */
+
+    @media
+    (prefers-reduced-motion: reduce) {
+
+      .banner-slide {
+        transition: none;
+
+        transform: none !important;
       }
 
     }
@@ -821,10 +967,44 @@
 
 
   <!-- =====================================================
-       HEADER
+       ROTATING HEADER BANNER
        ===================================================== -->
 
-  <header>
+  <header
+    class="banner-slider"
+    id="bannerSlider"
+  >
+
+
+    <!-- WSU RED -->
+
+    <div
+      class="banner-slide banner-slide-1 active"
+      aria-hidden="true"
+    >
+    </div>
+
+
+    <!-- DEEP MAROON -->
+
+    <div
+      class="banner-slide banner-slide-2"
+      aria-hidden="true"
+    >
+    </div>
+
+
+    <!-- CHARCOAL + RED -->
+
+    <div
+      class="banner-slide banner-slide-3"
+      aria-hidden="true"
+    >
+    </div>
+
+
+
+    <!-- BANNER CONTENT -->
 
     <div class="header-content">
 
@@ -839,6 +1019,42 @@
       </p>
 
     </div>
+
+
+
+    <!-- BANNER INDICATORS -->
+
+    <div
+      class="banner-indicators"
+      aria-label="Banner images"
+    >
+
+      <button
+        class="banner-indicator active"
+        type="button"
+        data-slide="0"
+        aria-label="Show banner style 1"
+      >
+      </button>
+
+      <button
+        class="banner-indicator"
+        type="button"
+        data-slide="1"
+        aria-label="Show banner style 2"
+      >
+      </button>
+
+      <button
+        class="banner-indicator"
+        type="button"
+        data-slide="2"
+        aria-label="Show banner style 3"
+      >
+      </button>
+
+    </div>
+
 
   </header>
 
@@ -1125,16 +1341,12 @@
 
         <p>
 
-          This page provides a simple
-          research-facing gateway for the
-          School of Computer, Data and
-          Mathematical Sciences at
-          Western Sydney University.
+          This page provides a simple research-facing
+          gateway for the School of Computer, Data and
+          Mathematical Sciences at Western Sydney University.
 
-          It brings together
-          supervisor discovery,
-          ongoing research areas,
-          HDR information
+          It brings together supervisor discovery,
+          ongoing research areas, HDR information
           and PhD researcher profiles.
 
         </p>
@@ -1159,9 +1371,7 @@
 
 
 
-          <!-- ===========================================
-               DIGITAL HEALTH
-               =========================================== -->
+          <!-- DIGITAL HEALTH -->
 
           <div class="card">
 
@@ -1213,9 +1423,7 @@
 
 
 
-          <!-- ===========================================
-               ARTIFICIAL INTELLIGENCE
-               =========================================== -->
+          <!-- ARTIFICIAL INTELLIGENCE -->
 
           <div class="card">
 
@@ -1226,8 +1434,7 @@
 
 
             <h3>
-              Artificial Intelligence
-              and Machine Learning
+              Artificial Intelligence and Machine Learning
             </h3>
 
 
@@ -1269,9 +1476,7 @@
 
 
 
-          <!-- ===========================================
-               STATISTICS
-               =========================================== -->
+          <!-- STATISTICS -->
 
           <div class="card">
 
@@ -1350,9 +1555,7 @@
 
 
 
-          <!-- ===========================================
-               KUNAL REHANI
-               =========================================== -->
+          <!-- KUNAL REHANI -->
 
           <div class="card">
 
@@ -1364,7 +1567,7 @@
                 src="images/profile1.jpg"
                 alt="Kunal Rehani"
                 class="researcher-image"
-              />
+              >
 
 
               <div>
@@ -1425,9 +1628,7 @@
 
 
 
-          <!-- ===========================================
-               RESEARCHER 2
-               =========================================== -->
+          <!-- RESEARCHER 2 -->
 
           <div class="card">
 
@@ -1439,7 +1640,7 @@
                 src="images/profile2.jpg"
                 alt="PhD researcher profile"
                 class="researcher-image"
-              />
+              >
 
 
               <div>
@@ -1484,9 +1685,7 @@
 
 
 
-          <!-- ===========================================
-               RESEARCHER 3
-               =========================================== -->
+          <!-- RESEARCHER 3 -->
 
           <div class="card">
 
@@ -1498,7 +1697,7 @@
                 src="images/profile3.jpg"
                 alt="PhD researcher profile"
                 class="researcher-image"
-              />
+              >
 
 
               <div>
@@ -1524,8 +1723,7 @@
 
               Add research area,
               project title,
-              keywords
-              and contact
+              keywords and contact
               or profile link here.
 
             </p>
@@ -1583,9 +1781,7 @@
 
 
 
-      <!-- ===============================================
-           PROFILE HEADER
-           =============================================== -->
+      <!-- PROFILE HEADER -->
 
       <div class="supervisor-profile-header">
 
@@ -1595,7 +1791,7 @@
           src=""
           alt="Supervisor profile"
           class="supervisor-photo"
-        />
+        >
 
 
         <div>
@@ -1621,9 +1817,7 @@
 
 
 
-      <!-- ===============================================
-           PROFILE BODY
-           =============================================== -->
+      <!-- PROFILE BODY -->
 
       <div class="supervisor-body">
 
@@ -1692,9 +1886,7 @@
 
 
 
-        <!-- ===========================================
-             SUPERVISOR CONTACT
-             =========================================== -->
+        <!-- CONTACT -->
 
         <h3>
           Contact
@@ -1768,9 +1960,7 @@
 
 
 
-      <!-- ===============================================
-           SEARCH HEADER
-           =============================================== -->
+      <!-- SEARCH HEADER -->
 
       <div class="cdms-search-header">
 
@@ -1784,12 +1974,9 @@
 
         <p>
 
-          Search official
-          Western Sydney University
-          research pages,
-          researcher profiles,
-          supervisors
-          and Higher Degree Research programs.
+          Search official Western Sydney University
+          research pages, researcher profiles,
+          supervisors and Higher Degree Research programs.
 
         </p>
 
@@ -1798,9 +1985,7 @@
 
 
 
-      <!-- ===============================================
-           SEARCH FORM
-           =============================================== -->
+      <!-- SEARCH FORM -->
 
       <div class="cdms-search-form">
 
@@ -1825,7 +2010,7 @@
             type="text"
             placeholder="Example: health data, AI, statistics"
             autocomplete="off"
-          />
+          >
 
 
         </div>
@@ -1851,7 +2036,7 @@
             type="text"
             placeholder="Example: Kenan Matawie"
             autocomplete="off"
-          />
+          >
 
 
         </div>
@@ -1938,70 +2123,53 @@
             </option>
 
 
+
             <optgroup
               label="CDMS Research Areas"
             >
 
 
-              <option
-                value="Computer Science"
-              >
+              <option value="Computer Science">
                 Computer Science
               </option>
 
 
-              <option
-                value="Information Systems"
-              >
+              <option value="Information Systems">
                 Information Systems
               </option>
 
 
-              <option
-                value="Data Science"
-              >
+              <option value="Data Science">
                 Data Science
               </option>
 
 
-              <option
-                value="Mathematics Statistics"
-              >
+              <option value="Mathematics Statistics">
                 Mathematics &amp; Statistics
               </option>
 
 
-              <option
-                value="Health Informatics"
-              >
+              <option value="Health Informatics">
                 Health Informatics
               </option>
 
 
-              <option
-                value="Artificial Intelligence"
-              >
+              <option value="Artificial Intelligence">
                 Artificial Intelligence
               </option>
 
 
-              <option
-                value="Machine Learning"
-              >
+              <option value="Machine Learning">
                 Machine Learning
               </option>
 
 
-              <option
-                value="Distributed Systems"
-              >
+              <option value="Distributed Systems">
                 Distributed Systems
               </option>
 
 
-              <option
-                value="Cyber Security"
-              >
+              <option value="Cyber Security">
                 Cyber Security
               </option>
 
@@ -2015,23 +2183,17 @@
             >
 
 
-              <option
-                value="theme-sustainability"
-              >
+              <option value="theme-sustainability">
                 Computing for Sustainability and Equality
               </option>
 
 
-              <option
-                value="theme-foundations"
-              >
+              <option value="theme-foundations">
                 Foundations, Algorithms and Discovery
               </option>
 
 
-              <option
-                value="theme-intelligent"
-              >
+              <option value="theme-intelligent">
                 Intelligent Decision Making
               </option>
 
@@ -2078,9 +2240,7 @@
 
 
 
-      <!-- ===============================================
-           OFFICIAL WSU RESEARCH LINKS
-           =============================================== -->
+      <!-- OFFICIAL WSU LINKS -->
 
       <div
         class="cdms-search-links"
@@ -2149,9 +2309,7 @@
 
 
 
-      <!-- ===============================================
-           CONTACTS
-           =============================================== -->
+      <!-- CONTACTS -->
 
       <div
         class="cdms-search-contacts"
@@ -2168,8 +2326,6 @@
         >
 
 
-
-          <!-- Yi Guo -->
 
           <div
             class="cdms-contact-row"
@@ -2205,8 +2361,6 @@
           </div>
 
 
-
-          <!-- Weisheng Si -->
 
           <div
             class="cdms-contact-row"
@@ -2244,8 +2398,6 @@
 
 
 
-          <!-- HDR TEAM -->
-
           <div
             class="cdms-contact-row"
           >
@@ -2264,10 +2416,7 @@
               <span>
                 HDR administration,
                 milestones,
-                governance,
-                supervision,
-                training
-                and candidate support
+                supervision and candidate support
               </span>
 
 
@@ -2286,8 +2435,6 @@
 
 
 
-          <!-- RESEARCH TEAM -->
-
           <div
             class="cdms-contact-row"
           >
@@ -2305,10 +2452,7 @@
 
               <span>
                 Research support,
-                grants,
-                integrity,
-                impact
-                and research development
+                grants and research development
               </span>
 
 
@@ -2318,44 +2462,6 @@
             <a
               class="cdms-contact-button"
               href="mailto:ECS-CDMS-Research@westernsydney.edu.au"
-            >
-              Contact
-            </a>
-
-
-          </div>
-
-
-
-          <!-- SCHOOL -->
-
-          <div
-            class="cdms-contact-row"
-          >
-
-
-            <div
-              class="cdms-contact-person"
-            >
-
-
-              <strong>
-                School of Computer,
-                Data and Mathematical Sciences
-              </strong>
-
-
-              <span>
-                General School enquiries
-              </span>
-
-
-            </div>
-
-
-            <a
-              class="cdms-contact-button"
-              href="mailto:cdms@westernsydney.edu.au"
             >
               Contact
             </a>
@@ -2385,7 +2491,6 @@
 
     Unofficial research profile page for
     CDMS-related HDR navigation.
-
     For official information,
     visit Western Sydney University.
 
@@ -2402,40 +2507,220 @@
 
 
     /* =====================================================
-       CDMS SEARCH POPUP ELEMENTS
+       ROTATING BANNER
+       ===================================================== */
+
+    const bannerSlides =
+      document.querySelectorAll(
+        ".banner-slide"
+      );
+
+
+    const bannerIndicators =
+      document.querySelectorAll(
+        ".banner-indicator"
+      );
+
+
+    let currentBannerSlide =
+      0;
+
+
+    let bannerTimer;
+
+
+
+    function showBannerSlide(
+      index
+    ) {
+
+
+      bannerSlides.forEach(
+
+        function(slide) {
+
+          slide
+            .classList
+            .remove(
+              "active"
+            );
+
+        }
+
+      );
+
+
+      bannerIndicators.forEach(
+
+        function(indicator) {
+
+          indicator
+            .classList
+            .remove(
+              "active"
+            );
+
+        }
+
+      );
+
+
+      currentBannerSlide =
+        index;
+
+
+      bannerSlides[
+        currentBannerSlide
+      ]
+      .classList
+      .add(
+        "active"
+      );
+
+
+      bannerIndicators[
+        currentBannerSlide
+      ]
+      .classList
+      .add(
+        "active"
+      );
+
+
+    }
+
+
+
+    function nextBannerSlide() {
+
+
+      const nextSlide =
+
+        (
+          currentBannerSlide + 1
+        )
+
+        %
+
+        bannerSlides.length;
+
+
+      showBannerSlide(
+        nextSlide
+      );
+
+
+    }
+
+
+
+    function startBannerRotation() {
+
+
+      clearInterval(
+        bannerTimer
+      );
+
+
+      bannerTimer =
+        setInterval(
+
+          nextBannerSlide,
+
+          4500
+
+        );
+
+
+    }
+
+
+
+    bannerIndicators.forEach(
+
+      function(
+        indicator
+      ) {
+
+
+        indicator
+          .addEventListener(
+
+            "click",
+
+            function() {
+
+
+              const slideIndex =
+
+                Number(
+                  this.dataset.slide
+                );
+
+
+              showBannerSlide(
+                slideIndex
+              );
+
+
+              startBannerRotation();
+
+
+            }
+
+          );
+
+
+      }
+
+    );
+
+
+    startBannerRotation();
+
+
+
+    /* =====================================================
+       SEARCH POPUP ELEMENTS
        ===================================================== */
 
     const cdmsSearchModal =
+
       document.getElementById(
         "cdmsSearchModal"
       );
 
 
     const openCdmsSearchBtn =
+
       document.getElementById(
         "openCdmsSearchBtn"
       );
 
 
     const closeCdmsSearchBtn =
+
       document.getElementById(
         "closeCdmsSearchBtn"
       );
 
 
     const cdmsSearchBackdrop =
+
       document.getElementById(
         "cdmsSearchBackdrop"
       );
 
 
     const runCdmsSearchBtn =
+
       document.getElementById(
         "runCdmsSearchBtn"
       );
 
 
     const resetCdmsSearchBtn =
+
       document.getElementById(
         "resetCdmsSearchBtn"
       );
@@ -2479,7 +2764,7 @@
 
 
     /* =====================================================
-       OFFICIAL CDMS RESEARCH THEME LINKS
+       CDMS RESEARCH THEME LINKS
        ===================================================== */
 
     const cdmsThemeLinks = {
@@ -2505,7 +2790,7 @@
 
 
     /* =====================================================
-       STANDARD CDMS AREA LINKS
+       CDMS AREA LINKS
        ===================================================== */
 
     const cdmsAreaLinks = {
@@ -2584,45 +2869,16 @@
 
       "associate professor kenan matawie":
 
-        "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/",
-
-
-      "yi guo":
-
-        "https://researchers.westernsydney.edu.au/en/persons/yi-guo/",
-
-
-      "associate professor yi guo":
-
-        "https://researchers.westernsydney.edu.au/en/persons/yi-guo/",
-
-
-      "weisheng si":
-
-        "https://researchers.westernsydney.edu.au/en/persons/weisheng-si/",
-
-
-      "dr weisheng si":
-
-        "https://researchers.westernsydney.edu.au/en/persons/weisheng-si/"
+        "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/"
 
 
     };
 
 
 
-    /* =====================================================
-       OTHER DIRECT WSU LINKS
-       ===================================================== */
-
     const cdmsSupervisorDirectory =
 
       "https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor";
-
-
-    const cdmsResearchPage =
-
-      "https://www.westernsydney.edu.au/schools/socdms/research";
 
 
     const wsuResearchProfiles =
@@ -2632,7 +2888,7 @@
 
 
     /* =====================================================
-       OPEN CDMS SEARCH POPUP
+       OPEN SEARCH
        ===================================================== */
 
     function openCdmsSearch() {
@@ -2652,10 +2908,7 @@
         );
 
 
-      document
-        .body
-        .style
-        .overflow =
+      document.body.style.overflow =
         "hidden";
 
 
@@ -2683,7 +2936,7 @@
 
 
     /* =====================================================
-       CLOSE CDMS SEARCH POPUP
+       CLOSE SEARCH
        ===================================================== */
 
     function closeCdmsSearch() {
@@ -2703,10 +2956,7 @@
         );
 
 
-      document
-        .body
-        .style
-        .overflow =
+      document.body.style.overflow =
         "";
 
 
@@ -2715,7 +2965,7 @@
 
 
     /* =====================================================
-       RESET SEARCH
+       CLEAR SEARCH
        ===================================================== */
 
     function resetCdmsSearch() {
@@ -2765,7 +3015,7 @@
 
 
     /* =====================================================
-       OPEN OFFICIAL WSU RESEARCH PROFILE SEARCH
+       DIRECT WSU RESEARCH PROFILES SEARCH
        ===================================================== */
 
     function openWsuResearchSearch(
@@ -2774,8 +3024,8 @@
 
 
       const cleanQuery =
-        query
-          .trim();
+
+        query.trim();
 
 
       if (!cleanQuery) {
@@ -2796,15 +3046,6 @@
 
 
       }
-
-
-      /*
-        WSU Research Profiles / Pure
-        uses a searchAll/index route.
-
-        Example:
-        /en/searchAll/index/research-term
-      */
 
 
       const slug =
@@ -2851,7 +3092,7 @@
 
 
     /* =====================================================
-       RUN CDMS SEARCH
+       RUN SEARCH
        ===================================================== */
 
     function runCdmsSearch() {
@@ -2896,9 +3137,7 @@
 
 
 
-      /* ===============================================
-         KNOWN ACADEMIC NAME
-         =============================================== */
+      /* KNOWN ACADEMIC */
 
       if (academicName) {
 
@@ -2940,12 +3179,7 @@
 
 
 
-      /* ===============================================
-         NAME / KEYWORD COMBINATION
-
-         Send directly into WSU Research Profiles.
-         No Google is used.
-         =============================================== */
+      /* NAME / KEYWORD SEARCH */
 
       if (
         academicName ||
@@ -3005,9 +3239,7 @@
 
 
 
-      /* ===============================================
-         DEGREE ONLY
-         =============================================== */
+      /* DEGREE */
 
       if (
         degree &&
@@ -3037,9 +3269,7 @@
 
 
 
-      /* ===============================================
-         OFFICIAL RESEARCH THEME
-         =============================================== */
+      /* OFFICIAL RESEARCH THEME */
 
       if (
         area &&
@@ -3069,9 +3299,7 @@
 
 
 
-      /* ===============================================
-         STANDARD AREA / SUBJECT
-         =============================================== */
+      /* SUBJECT AREA */
 
       if (
         area &&
@@ -3101,9 +3329,7 @@
 
 
 
-      /* ===============================================
-         NOTHING SELECTED
-         =============================================== */
+      /* DEFAULT */
 
       window.open(
 
@@ -3121,63 +3347,44 @@
 
 
     /* =====================================================
-       SEARCH POPUP EVENTS
+       SEARCH EVENTS
        ===================================================== */
 
     openCdmsSearchBtn
       .addEventListener(
-
         "click",
-
         openCdmsSearch
-
       );
 
 
     closeCdmsSearchBtn
       .addEventListener(
-
         "click",
-
         closeCdmsSearch
-
       );
 
 
     cdmsSearchBackdrop
       .addEventListener(
-
         "click",
-
         closeCdmsSearch
-
       );
 
 
     runCdmsSearchBtn
       .addEventListener(
-
         "click",
-
         runCdmsSearch
-
       );
 
 
     resetCdmsSearchBtn
       .addEventListener(
-
         "click",
-
         resetCdmsSearch
-
       );
 
 
-
-    /* =====================================================
-       ENTER KEY SEARCH
-       ===================================================== */
 
     [
       "cdmsKeyword",
@@ -3219,46 +3426,6 @@
       }
 
     );
-
-
-
-    /* =====================================================
-       ESCAPE KEY FOR SEARCH POPUP
-       ===================================================== */
-
-    document
-      .addEventListener(
-
-        "keydown",
-
-        function(event) {
-
-
-          if (
-
-            event.key ===
-            "Escape"
-
-            &&
-
-            cdmsSearchModal
-              .classList
-              .contains(
-                "active"
-              )
-
-          ) {
-
-
-            closeCdmsSearch();
-
-
-          }
-
-
-        }
-
-      );
 
 
 
@@ -3642,9 +3809,7 @@
 
 
 
-      /* ===============================================
-         NAME
-         =============================================== */
+      /* NAME */
 
       document
         .getElementById(
@@ -3656,9 +3821,7 @@
 
 
 
-      /* ===============================================
-         TITLE
-         =============================================== */
+      /* TITLE */
 
       document
         .getElementById(
@@ -3670,9 +3833,7 @@
 
 
 
-      /* ===============================================
-         PHOTO
-         =============================================== */
+      /* PHOTO */
 
       const photo =
 
@@ -3693,9 +3854,7 @@
 
 
 
-      /* ===============================================
-         DEMONSTRATION NOTICE
-         =============================================== */
+      /* DEMO NOTICE */
 
       const demoNotice =
 
@@ -3731,9 +3890,7 @@
 
 
 
-      /* ===============================================
-         AVAILABILITY
-         =============================================== */
+      /* AVAILABILITY */
 
       const availability =
 
@@ -3785,9 +3942,7 @@
 
 
 
-      /* ===============================================
-         THEMES
-         =============================================== */
+      /* THEMES */
 
       document
         .getElementById(
@@ -3799,9 +3954,7 @@
 
 
 
-      /* ===============================================
-         INTERESTS
-         =============================================== */
+      /* INTERESTS */
 
       document
         .getElementById(
@@ -3813,9 +3966,7 @@
 
 
 
-      /* ===============================================
-         PROJECTS
-         =============================================== */
+      /* PROJECTS */
 
       const projects =
 
@@ -3862,9 +4013,9 @@
 
 
 
-      /* ===============================================
+      /* =================================================
          CONTACT
-         =============================================== */
+         ================================================= */
 
       const contact =
 
@@ -3990,9 +4141,7 @@
 
 
 
-      /* ===============================================
-         PROFILE LINKS
-         =============================================== */
+      /* PROFILE LINKS */
 
       const links =
 
@@ -4087,9 +4236,7 @@
 
 
 
-      /* ===============================================
-         SHOW SUPERVISOR POPUP
-         =============================================== */
+      /* SHOW POPUP */
 
       const modal =
 
@@ -4115,9 +4262,7 @@
 
 
 
-      /* ===============================================
-         RESET POPUP SCROLL
-         =============================================== */
+      /* RESET SCROLL */
 
       const modalContent =
 
@@ -4137,7 +4282,7 @@
 
 
     /* =====================================================
-       CLOSE SUPERVISOR PROFILE
+       CLOSE SUPERVISOR
        ===================================================== */
 
     function closeSupervisorProfile() {
@@ -4175,7 +4320,7 @@
 
 
     /* =====================================================
-       CLICK OUTSIDE SUPERVISOR POPUP TO CLOSE
+       CLICK OUTSIDE SUPERVISOR POPUP
        ===================================================== */
 
     window
@@ -4213,7 +4358,7 @@
 
 
     /* =====================================================
-       ESC KEY TO CLOSE SUPERVISOR POPUP
+       ESCAPE KEY
        ===================================================== */
 
     document
@@ -4225,33 +4370,56 @@
 
 
           if (
-            event.key ===
+            event.key !==
             "Escape"
           ) {
 
+            return;
 
-            const modal =
-
-              document
-                .getElementById(
-                  "supervisorModal"
-                );
+          }
 
 
-            if (
 
-              modal
-                .style
-                .display ===
-              "block"
+          /* SEARCH POPUP */
 
-            ) {
+          if (
+            cdmsSearchModal
+              .classList
+              .contains(
+                "active"
+              )
+          ) {
 
 
-              closeSupervisorProfile();
+            closeCdmsSearch();
 
 
-            }
+            return;
+
+
+          }
+
+
+
+          /* SUPERVISOR POPUP */
+
+          const modal =
+
+            document
+              .getElementById(
+                "supervisorModal"
+              );
+
+
+          if (
+            modal
+              .style
+              .display ===
+            "block"
+          ) {
+
+
+            closeSupervisorProfile();
 
 
           }
@@ -4266,6 +4434,5 @@
 
 
 </body>
-
 
 </html>

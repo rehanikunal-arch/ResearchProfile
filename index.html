@@ -53,6 +53,313 @@
       padding-top: 22px;
       border-top: 1px solid var(--border);
     }
+
+    /* =====================================================
+       CARD ACTION LINKS
+       ===================================================== */
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .card-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 700;
+      box-sizing: border-box;
+    }
+
+    .card-actions .contact-link {
+      border: 1px solid var(--wsu-red);
+      background: #ffffff;
+      color: var(--wsu-red);
+    }
+
+    .card-actions .contact-link:hover {
+      background: #fff3f7;
+    }
+
+    /* =====================================================
+       CDMS SEARCH POPUP
+       ===================================================== */
+
+    .cdms-search-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 6000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .cdms-search-modal.active {
+      display: flex;
+    }
+
+    .cdms-search-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.58);
+      backdrop-filter: blur(3px);
+    }
+
+    .cdms-search-dialog {
+      position: relative;
+      z-index: 6001;
+      width: min(760px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 34px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      box-sizing: border-box;
+    }
+
+    .cdms-search-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      background: transparent;
+      color: #555555;
+      font-size: 34px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .cdms-search-close:hover {
+      color: var(--wsu-red);
+    }
+
+    .cdms-search-header {
+      padding-right: 48px;
+      margin-bottom: 25px;
+    }
+
+    .cdms-search-header h2 {
+      margin: 0 0 8px;
+      color: var(--wsu-red);
+      font-size: 30px;
+    }
+
+    .cdms-search-header p {
+      margin: 0;
+      color: #555555;
+      line-height: 1.55;
+    }
+
+    .cdms-search-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .cdms-search-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .cdms-search-field.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .cdms-search-field label {
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .cdms-search-field input,
+    .cdms-search-field select {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 13px;
+      border: 1px solid #cfcfcf;
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--dark);
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    .cdms-search-field input:focus,
+    .cdms-search-field select:focus {
+      outline: none;
+      border-color: var(--wsu-red);
+      box-shadow: 0 0 0 3px rgba(153, 0, 51, 0.10);
+    }
+
+    .cdms-search-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 12px;
+      margin-top: 3px;
+    }
+
+    .cdms-primary-search,
+    .cdms-reset-search {
+      min-height: 50px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .cdms-primary-search {
+      flex: 1;
+      border: 0;
+      background: var(--wsu-red);
+      color: #ffffff;
+    }
+
+    .cdms-primary-search:hover {
+      background: var(--wsu-red-dark);
+    }
+
+    .cdms-reset-search {
+      min-width: 110px;
+      border: 1px solid #cccccc;
+      background: #ffffff;
+      color: var(--dark);
+    }
+
+    .cdms-reset-search:hover {
+      background: #f5f5f5;
+    }
+
+    .cdms-search-links,
+    .cdms-search-contacts {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cdms-search-links h3,
+    .cdms-search-contacts h3 {
+      margin: 0 0 12px;
+      color: var(--dark);
+      font-size: 17px;
+    }
+
+    .cdms-link-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .cdms-link-grid a {
+      color: var(--wsu-red);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .cdms-link-grid a:hover {
+      text-decoration: underline;
+    }
+
+    .cdms-contact-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cdms-contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .cdms-contact-row:last-child {
+      border-bottom: 0;
+    }
+
+    .cdms-contact-person {
+      min-width: 0;
+    }
+
+    .cdms-contact-person strong {
+      display: block;
+      color: var(--dark);
+    }
+
+    .cdms-contact-person span {
+      display: block;
+      margin-top: 3px;
+      color: #666666;
+      font-size: 13px;
+    }
+
+    .cdms-contact-button {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--wsu-red);
+      border-radius: 7px;
+      color: var(--wsu-red);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .cdms-contact-button:hover {
+      background: #fff3f7;
+    }
+
+    @media (max-width: 640px) {
+      .cdms-search-modal {
+        padding: 12px;
+      }
+
+      .cdms-search-dialog {
+        padding: 26px 20px;
+        border-radius: 10px;
+      }
+
+      .cdms-search-header h2 {
+        font-size: 25px;
+      }
+
+      .cdms-search-form {
+        grid-template-columns: 1fr;
+      }
+
+      .cdms-search-field.full-width,
+      .cdms-search-actions {
+        grid-column: auto;
+      }
+
+      .cdms-search-actions {
+        flex-direction: column;
+      }
+
+      .cdms-reset-search {
+        min-height: 46px;
+      }
+
+      .cdms-contact-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -123,6 +430,13 @@
       Our People
     </a>
 
+    <a
+      href="https://www.westernsydney.edu.au/schools/school-contacts"
+      target="_blank"
+      rel="noopener noreferrer">
+      Contact
+    </a>
+
   </nav>
 
 
@@ -168,7 +482,7 @@
           </option>
 
           <option value="kenan">
-            Kenan M. Matawie
+            Associate Professor Kenan M. Matawie
           </option>
 
           <option value="supervisor2">
@@ -200,20 +514,13 @@
 
         <p>
           Search for supervisors, research topics,
-          HDR projects or academic profiles.
+          HDR projects, research degrees or academic profiles.
         </p>
-
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="Example: health data, AI, statistics"
-          aria-label="Search CDMS"
-        />
 
         <button
           class="search-button"
-          type="button"
-          onclick="searchSite()">
+          id="openCdmsSearchBtn"
+          type="button">
           Search WSU CDMS
         </button>
 
@@ -259,10 +566,24 @@
 
         <p>
           <a
-            href="https://www.westernsydney.edu.au/schools/socdms/contact-us"
+            href="mailto:ECS-CDMS-HDR@westernsydney.edu.au">
+            Contact — CDMS HDR Team
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="mailto:ECS-CDMS-Research@westernsydney.edu.au">
+            Contact — CDMS Research Team
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://www.westernsydney.edu.au/schools/school-contacts"
             target="_blank"
             rel="noopener noreferrer">
-            Contact CDMS
+            Contact
           </a>
         </p>
 
@@ -331,12 +652,23 @@
               statistical modelling.
             </p>
 
-            <a
-              href="https://www.westernsydney.edu.au/schools/socdms/research"
-              target="_blank"
-              rel="noopener noreferrer">
-              View CDMS Research
-            </a>
+            <div class="card-actions">
+
+              <a
+                href="https://www.westernsydney.edu.au/schools/socdms/research/computing-for-sustainability-and-equality"
+                target="_blank"
+                rel="noopener noreferrer">
+                View WSU Research
+              </a>
+
+              <a
+                class="contact-link"
+                href="mailto:y.guo@westernsydney.edu.au"
+                title="Associate Professor Yi Guo — Associate Dean Research">
+                Contact
+              </a>
+
+            </div>
 
           </div>
 
@@ -359,12 +691,23 @@
               and applied computing.
             </p>
 
-            <a
-              href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/"
-              target="_blank"
-              rel="noopener noreferrer">
-              Explore Research Profiles
-            </a>
+            <div class="card-actions">
+
+              <a
+                href="https://www.westernsydney.edu.au/schools/socdms/research/intelligent-decision-making"
+                target="_blank"
+                rel="noopener noreferrer">
+                View WSU Research
+              </a>
+
+              <a
+                class="contact-link"
+                href="mailto:y.guo@westernsydney.edu.au"
+                title="Associate Professor Yi Guo — Associate Dean Research">
+                Contact
+              </a>
+
+            </div>
 
           </div>
 
@@ -387,12 +730,23 @@
               uncertainty and applied mathematics.
             </p>
 
-            <a
-              href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research"
-              target="_blank"
-              rel="noopener noreferrer">
-              HDR Research Information
-            </a>
+            <div class="card-actions">
+
+              <a
+                href="https://www.westernsydney.edu.au/schools/socdms/research/foundations-algorithms-and-discovery"
+                target="_blank"
+                rel="noopener noreferrer">
+                View WSU Research
+              </a>
+
+              <a
+                class="contact-link"
+                href="mailto:y.guo@westernsydney.edu.au"
+                title="Associate Professor Yi Guo — Associate Dean Research">
+                Contact
+              </a>
+
+            </div>
 
           </div>
 
@@ -450,12 +804,23 @@
               healthcare analytics.
             </p>
 
-            <a
-              href="https://kunalrehani.com"
-              target="_blank"
-              rel="noopener noreferrer">
-              View Profile
-            </a>
+            <div class="card-actions">
+
+              <a
+                href="https://kunalrehani.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                View Profile
+              </a>
+
+              <a
+                href="https://researchers.westernsydney.edu.au/en/publications/a-reproducible-analytics-workflow-for-longitudinal-healthcare-dig/"
+                target="_blank"
+                rel="noopener noreferrer">
+                WSU Research
+              </a>
+
+            </div>
 
           </div>
 
@@ -662,6 +1027,411 @@
   </div>
 
 
+
+  <!-- =====================================================
+       CDMS SEARCH POPUP
+       ===================================================== -->
+
+  <div
+    id="cdmsSearchModal"
+    class="cdms-search-modal"
+    aria-hidden="true"
+  >
+
+    <div
+      id="cdmsSearchBackdrop"
+      class="cdms-search-backdrop">
+    </div>
+
+    <div
+      class="cdms-search-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cdmsSearchTitle"
+    >
+
+      <button
+        type="button"
+        class="cdms-search-close"
+        id="closeCdmsSearchBtn"
+        aria-label="Close Search CDMS">
+        &times;
+      </button>
+
+
+      <div class="cdms-search-header">
+
+        <h2 id="cdmsSearchTitle">
+          Search CDMS
+        </h2>
+
+        <p>
+          Search official Western Sydney University
+          research pages, researcher profiles,
+          supervisors and Higher Degree Research programs.
+        </p>
+
+      </div>
+
+
+      <div class="cdms-search-form">
+
+
+        <!-- KEYWORD -->
+
+        <div class="cdms-search-field full-width">
+
+          <label for="cdmsKeyword">
+            Keyword
+          </label>
+
+          <input
+            id="cdmsKeyword"
+            type="text"
+            placeholder="Example: health data, AI, statistics"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+        <!-- NAME -->
+
+        <div class="cdms-search-field">
+
+          <label for="cdmsName">
+            Search by Name
+          </label>
+
+          <input
+            id="cdmsName"
+            type="text"
+            placeholder="Example: Kenan Matawie"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+        <!-- DEGREE -->
+
+        <div class="cdms-search-field">
+
+          <label for="cdmsDegree">
+            Search by Research Degree
+          </label>
+
+          <select id="cdmsDegree">
+
+            <option value="">
+              Any research degree
+            </option>
+
+            <option value="mres">
+              Master of Research (MRes)
+            </option>
+
+            <option value="mphil">
+              Master of Philosophy (MPhil)
+            </option>
+
+            <option value="mict">
+              Master of Information and Communications Technology (Research)
+            </option>
+
+            <option value="mai">
+              Master of Artificial Intelligence (Research)
+            </option>
+
+            <option value="phd">
+              Doctor of Philosophy (PhD)
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- AREA / SUBJECT -->
+
+        <div class="cdms-search-field full-width">
+
+          <label for="cdmsArea">
+            Search by Area / Subject
+          </label>
+
+          <select id="cdmsArea">
+
+            <option value="">
+              Any research area
+            </option>
+
+            <optgroup label="CDMS Research Areas">
+
+              <option value="Computer Science">
+                Computer Science
+              </option>
+
+              <option value="Information Systems">
+                Information Systems
+              </option>
+
+              <option value="Data Science">
+                Data Science
+              </option>
+
+              <option value="Mathematics Statistics">
+                Mathematics &amp; Statistics
+              </option>
+
+              <option value="Health Informatics">
+                Health Informatics
+              </option>
+
+              <option value="Artificial Intelligence">
+                Artificial Intelligence
+              </option>
+
+              <option value="Machine Learning">
+                Machine Learning
+              </option>
+
+              <option value="Distributed Systems">
+                Distributed Systems
+              </option>
+
+              <option value="Cyber Security">
+                Cyber Security
+              </option>
+
+            </optgroup>
+
+
+            <optgroup label="Official CDMS Research Themes">
+
+              <option value="theme-sustainability">
+                Computing for Sustainability and Equality
+              </option>
+
+              <option value="theme-foundations">
+                Foundations, Algorithms and Discovery
+              </option>
+
+              <option value="theme-intelligent">
+                Intelligent Decision Making
+              </option>
+
+            </optgroup>
+
+          </select>
+
+        </div>
+
+
+        <!-- SEARCH ACTIONS -->
+
+        <div class="cdms-search-actions">
+
+          <button
+            type="button"
+            class="cdms-primary-search"
+            id="runCdmsSearchBtn">
+            Search WSU
+          </button>
+
+          <button
+            type="button"
+            class="cdms-reset-search"
+            id="resetCdmsSearchBtn">
+            Clear
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- OFFICIAL WSU LINKS -->
+
+      <div class="cdms-search-links">
+
+        <h3>
+          Official WSU Research Links
+        </h3>
+
+        <div class="cdms-link-grid">
+
+          <a
+            href="https://www.westernsydney.edu.au/schools/socdms/research"
+            target="_blank"
+            rel="noopener noreferrer">
+            CDMS Research
+          </a>
+
+          <a
+            href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research"
+            target="_blank"
+            rel="noopener noreferrer">
+            Higher Degree Research
+          </a>
+
+          <a
+            href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor"
+            target="_blank"
+            rel="noopener noreferrer">
+            Find a Supervisor
+          </a>
+
+          <a
+            href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/"
+            target="_blank"
+            rel="noopener noreferrer">
+            WSU Researcher Profiles
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTACTS -->
+
+      <div class="cdms-search-contacts">
+
+        <h3>
+          Contacts
+        </h3>
+
+        <div class="cdms-contact-list">
+
+
+          <div class="cdms-contact-row">
+
+            <div class="cdms-contact-person">
+
+              <strong>
+                Associate Professor Yi Guo
+              </strong>
+
+              <span>
+                Associate Dean Research — CDMS
+              </span>
+
+            </div>
+
+            <a
+              class="cdms-contact-button"
+              href="mailto:y.guo@westernsydney.edu.au">
+              Contact
+            </a>
+
+          </div>
+
+
+          <div class="cdms-contact-row">
+
+            <div class="cdms-contact-person">
+
+              <strong>
+                Associate Professor Weisheng Si
+              </strong>
+
+              <span>
+                HDR Associate Dean, Graduate Studies — CDMS
+              </span>
+
+            </div>
+
+            <a
+              class="cdms-contact-button"
+              href="mailto:w.si@westernsydney.edu.au">
+              Contact
+            </a>
+
+          </div>
+
+
+          <div class="cdms-contact-row">
+
+            <div class="cdms-contact-person">
+
+              <strong>
+                CDMS HDR Team
+              </strong>
+
+              <span>
+                HDR administration, milestones, governance,
+                supervision, training and candidate support
+              </span>
+
+            </div>
+
+            <a
+              class="cdms-contact-button"
+              href="mailto:ECS-CDMS-HDR@westernsydney.edu.au">
+              Contact
+            </a>
+
+          </div>
+
+
+          <div class="cdms-contact-row">
+
+            <div class="cdms-contact-person">
+
+              <strong>
+                CDMS Research Team
+              </strong>
+
+              <span>
+                Research support, grants, integrity,
+                impact and research development
+              </span>
+
+            </div>
+
+            <a
+              class="cdms-contact-button"
+              href="mailto:ECS-CDMS-Research@westernsydney.edu.au">
+              Contact
+            </a>
+
+          </div>
+
+
+          <div class="cdms-contact-row">
+
+            <div class="cdms-contact-person">
+
+              <strong>
+                School of Computer, Data and Mathematical Sciences
+              </strong>
+
+              <span>
+                General School enquiries
+              </span>
+
+            </div>
+
+            <a
+              class="cdms-contact-button"
+              href="mailto:cdms@westernsydney.edu.au">
+              Contact
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
   <!-- =====================================================
        FOOTER
        ===================================================== -->
@@ -681,55 +1451,416 @@
   <script>
 
     /* =====================================================
-       SEARCH WSU
+       SEARCH WSU / CDMS SEARCH POPUP
        ===================================================== */
 
-    function searchSite() {
+    const cdmsSearchModal =
+      document.getElementById("cdmsSearchModal");
 
-      const searchInput =
-        document.getElementById("searchInput");
+    const openCdmsSearchBtn =
+      document.getElementById("openCdmsSearchBtn");
 
-      const query =
-        searchInput.value.trim();
+    const closeCdmsSearchBtn =
+      document.getElementById("closeCdmsSearchBtn");
 
-      if (!query) {
+    const cdmsSearchBackdrop =
+      document.getElementById("cdmsSearchBackdrop");
 
-        alert("Please enter a search term.");
+    const runCdmsSearchBtn =
+      document.getElementById("runCdmsSearchBtn");
 
-        searchInput.focus();
+    const resetCdmsSearchBtn =
+      document.getElementById("resetCdmsSearchBtn");
+
+
+    const cdmsDegreeLinks = {
+
+      mres:
+        "https://www.westernsydney.edu.au/future/study/courses/research/master-of-research",
+
+      mphil:
+        "https://www.westernsydney.edu.au/future/study/courses/research/master-of-philosophy",
+
+      mict:
+        "https://www.westernsydney.edu.au/future/study/courses/research/master-of-information-and-communications-technology-research",
+
+      mai:
+        "https://www.westernsydney.edu.au/future/study/courses/research/master-of-artificial-intelligence-research",
+
+      phd:
+        "https://www.westernsydney.edu.au/future/study/courses/research/doctor-of-philosophy"
+
+    };
+
+
+    const cdmsThemeLinks = {
+
+      "theme-sustainability":
+        "https://www.westernsydney.edu.au/schools/socdms/research/computing-for-sustainability-and-equality",
+
+      "theme-foundations":
+        "https://www.westernsydney.edu.au/schools/socdms/research/foundations-algorithms-and-discovery",
+
+      "theme-intelligent":
+        "https://www.westernsydney.edu.au/schools/socdms/research/intelligent-decision-making"
+
+    };
+
+
+    const cdmsThemeSearchNames = {
+
+      "theme-sustainability":
+        "Computing for Sustainability and Equality",
+
+      "theme-foundations":
+        "Foundations Algorithms and Discovery",
+
+      "theme-intelligent":
+        "Intelligent Decision Making"
+
+    };
+
+
+    const cdmsDegreeSearchNames = {
+
+      mres:
+        "Master of Research",
+
+      mphil:
+        "Master of Philosophy",
+
+      mict:
+        "Master of Information and Communications Technology Research",
+
+      mai:
+        "Master of Artificial Intelligence Research",
+
+      phd:
+        "Doctor of Philosophy PhD"
+
+    };
+
+
+    const cdmsSupervisorDirectory =
+      "https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor";
+
+
+    function openCdmsSearch() {
+
+      cdmsSearchModal.classList.add("active");
+
+      cdmsSearchModal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
+
+      setTimeout(
+        function() {
+
+          document
+            .getElementById("cdmsKeyword")
+            .focus();
+
+        },
+        100
+      );
+
+    }
+
+
+    function closeCdmsSearch() {
+
+      cdmsSearchModal.classList.remove("active");
+
+      cdmsSearchModal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    function resetCdmsSearch() {
+
+      document
+        .getElementById("cdmsKeyword")
+        .value =
+        "";
+
+      document
+        .getElementById("cdmsName")
+        .value =
+        "";
+
+      document
+        .getElementById("cdmsDegree")
+        .value =
+        "";
+
+      document
+        .getElementById("cdmsArea")
+        .value =
+        "";
+
+      document
+        .getElementById("cdmsKeyword")
+        .focus();
+
+    }
+
+
+    function runCdmsSearch() {
+
+      const keyword =
+        document
+          .getElementById("cdmsKeyword")
+          .value
+          .trim();
+
+      const academicName =
+        document
+          .getElementById("cdmsName")
+          .value
+          .trim();
+
+      const degree =
+        document
+          .getElementById("cdmsDegree")
+          .value;
+
+      const area =
+        document
+          .getElementById("cdmsArea")
+          .value;
+
+
+      /* Direct official WSU degree page when degree is the only filter */
+
+      if (
+        !keyword &&
+        !academicName &&
+        !area &&
+        degree &&
+        cdmsDegreeLinks[degree]
+      ) {
+
+        window.open(
+          cdmsDegreeLinks[degree],
+          "_blank",
+          "noopener,noreferrer"
+        );
 
         return;
+
       }
+
+
+      /* Direct official WSU research theme page when theme is the only filter */
+
+      if (
+        !keyword &&
+        !academicName &&
+        !degree &&
+        cdmsThemeLinks[area]
+      ) {
+
+        window.open(
+          cdmsThemeLinks[area],
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+        return;
+
+      }
+
+
+      const searchTerms = [];
+
+
+      if (academicName) {
+
+        searchTerms.push(
+          '"' + academicName + '"'
+        );
+
+      }
+
+
+      if (keyword) {
+
+        searchTerms.push(
+          keyword
+        );
+
+      }
+
+
+      if (area) {
+
+        if (cdmsThemeSearchNames[area]) {
+
+          searchTerms.push(
+            '"' +
+            cdmsThemeSearchNames[area] +
+            '"'
+          );
+
+        } else {
+
+          searchTerms.push(
+            '"' + area + '"'
+          );
+
+        }
+
+      }
+
+
+      if (
+        degree &&
+        cdmsDegreeSearchNames[degree]
+      ) {
+
+        searchTerms.push(
+          '"' +
+          cdmsDegreeSearchNames[degree] +
+          '"'
+        );
+
+      }
+
+
+      if (searchTerms.length === 0) {
+
+        window.open(
+          cdmsSupervisorDirectory,
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+        return;
+
+      }
+
+
+      let domainRestriction =
+        "site:westernsydney.edu.au/schools/socdms/ OR " +
+        "site:researchers.westernsydney.edu.au";
+
+
+      if (
+        academicName &&
+        !keyword &&
+        !degree &&
+        !area
+      ) {
+
+        domainRestriction =
+          "site:researchers.westernsydney.edu.au/en/persons/";
+
+      }
+
+
+      const searchQuery =
+        searchTerms.join(" ") +
+        " (" +
+        domainRestriction +
+        ")";
+
 
       const searchUrl =
         "https://www.google.com/search?q=" +
         encodeURIComponent(
-          query +
-          " site:westernsydney.edu.au/schools/socdms OR site:researchers.westernsydney.edu.au"
+          searchQuery
         );
+
 
       window.open(
         searchUrl,
         "_blank",
         "noopener,noreferrer"
       );
+
     }
 
 
-    /* ENTER KEY SEARCH */
+    openCdmsSearchBtn.addEventListener(
+      "click",
+      openCdmsSearch
+    );
 
-    document
-      .getElementById("searchInput")
-      .addEventListener(
-        "keydown",
-        function(event) {
 
-          if (event.key === "Enter") {
-            searchSite();
-          }
+    closeCdmsSearchBtn.addEventListener(
+      "click",
+      closeCdmsSearch
+    );
+
+
+    cdmsSearchBackdrop.addEventListener(
+      "click",
+      closeCdmsSearch
+    );
+
+
+    runCdmsSearchBtn.addEventListener(
+      "click",
+      runCdmsSearch
+    );
+
+
+    resetCdmsSearchBtn.addEventListener(
+      "click",
+      resetCdmsSearch
+    );
+
+
+    [
+      "cdmsKeyword",
+      "cdmsName"
+    ].forEach(
+      function(id) {
+
+        document
+          .getElementById(id)
+          .addEventListener(
+            "keydown",
+            function(event) {
+
+              if (event.key === "Enter") {
+                runCdmsSearch();
+              }
+
+            }
+          );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          cdmsSearchModal.classList.contains(
+            "active"
+          )
+        ) {
+
+          closeCdmsSearch();
 
         }
-      );
+
+      }
+    );
 
 
     /* =====================================================
@@ -785,6 +1916,14 @@
 
             url:
               "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/"
+          },
+
+          {
+            label:
+              "Contact",
+
+            url:
+              "mailto:K.Matawie@westernsydney.edu.au"
           },
 
           {

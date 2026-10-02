@@ -11,7 +11,7 @@
   >
 
   <title>
-    CDMS Research Hub | Western Sydney University
+    HDR and Supervisor Connect at CDMS
   </title>
 
 
@@ -85,13 +85,64 @@
 
 
     /* =====================================================
+       QUICK LINKS - PUBLICATIONS
+       ===================================================== */
+
+    .quick-subtitle {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+
+    .publication-year-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+
+    .publication-year-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 52px;
+      min-height: 32px;
+
+      padding: 0 10px;
+
+      border: 1px solid var(--wsu-red);
+      border-radius: 6px;
+
+      color: var(--wsu-red);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      background: white;
+    }
+
+
+    .publication-year-links a:hover {
+      background: #fff3f7;
+    }
+
+
+
+    /* =====================================================
        ROTATING TOP BANNER
        ===================================================== */
 
     header.banner-slider {
       position: relative;
 
-      min-height: 350px;
+      min-height: 370px;
 
       padding: 45px 40px;
 
@@ -134,15 +185,15 @@
 
     .banner-slide.active {
       opacity: 1;
+
       transform: scale(1.035);
     }
 
 
 
-    /* -----------------------------------------------------
-       VARIANT 1
-       CLASSIC WSU RED
-       ----------------------------------------------------- */
+    /* =====================================================
+       BANNER 1 - CLASSIC RED
+       ===================================================== */
 
     .banner-slide-1 {
       background-image:
@@ -164,10 +215,9 @@
 
 
 
-    /* -----------------------------------------------------
-       VARIANT 2
-       DEEP WSU MAROON / PLUM
-       ----------------------------------------------------- */
+    /* =====================================================
+       BANNER 2 - DEEP MAROON
+       ===================================================== */
 
     .banner-slide-2 {
       background-image:
@@ -190,10 +240,9 @@
 
 
 
-    /* -----------------------------------------------------
-       VARIANT 3
-       CHARCOAL + WSU RED
-       ----------------------------------------------------- */
+    /* =====================================================
+       BANNER 3 - CHARCOAL / RED
+       ===================================================== */
 
     .banner-slide-3 {
       background-image:
@@ -216,35 +265,60 @@
 
 
 
-    /* -----------------------------------------------------
-       BANNER TEXT
-       ----------------------------------------------------- */
+    /* =====================================================
+       BANNER CONTENT
+       ===================================================== */
 
     header.banner-slider .header-content {
       position: relative;
 
       z-index: 5;
 
-      max-width: 900px;
+      max-width: 950px;
     }
 
 
-    header.banner-slider .header-content h1 {
-      position: relative;
+    header.banner-slider .hub-title {
+      margin: 0 0 16px;
 
-      z-index: 5;
+      font-size: clamp(40px, 5vw, 62px);
 
-      margin-top: 0;
+      line-height: 1.06;
+
+      font-weight: 800;
+
+      color: #ffffff;
+
+      letter-spacing: -0.7px;
 
       text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.55);
+        0 3px 12px rgba(0, 0, 0, 0.58);
+    }
+
+
+    header.banner-slider .school-title {
+      margin: 0 0 11px;
+
+      font-size: clamp(22px, 2.5vw, 31px);
+
+      line-height: 1.2;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.52);
     }
 
 
     header.banner-slider .header-content p {
-      position: relative;
+      margin: 0;
 
-      z-index: 5;
+      font-size: 17px;
+
+      color:
+        rgba(255, 255, 255, 0.95);
 
       text-shadow:
         0 2px 7px rgba(0, 0, 0, 0.50);
@@ -252,9 +326,9 @@
 
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        BANNER INDICATORS
-       ----------------------------------------------------- */
+       ===================================================== */
 
     .banner-indicators {
       position: absolute;
@@ -262,6 +336,7 @@
       z-index: 10;
 
       left: 40px;
+
       bottom: 22px;
 
       display: flex;
@@ -276,7 +351,8 @@
 
       padding: 0;
 
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      border:
+        1px solid rgba(255, 255, 255, 0.8);
 
       border-radius: 50%;
 
@@ -399,7 +475,8 @@
 
 
     .supervisor-contact-button:hover {
-      background: var(--wsu-red-dark);
+      background:
+        var(--wsu-red-dark);
 
       transform:
         translateY(-1px);
@@ -845,7 +922,7 @@
     (max-width: 640px) {
 
       header.banner-slider {
-        min-height: 280px;
+        min-height: 300px;
 
         padding:
           30px 20px;
@@ -865,15 +942,18 @@
       }
 
 
-      header.banner-slider
-      .header-content h1 {
-        font-size: 29px;
+      header.banner-slider .hub-title {
+        font-size: 34px;
       }
 
 
-      header.banner-slider
-      .header-content p {
-        font-size: 15px;
+      header.banner-slider .school-title {
+        font-size: 21px;
+      }
+
+
+      header.banner-slider .header-content p {
+        font-size: 14px;
       }
 
 
@@ -942,7 +1022,7 @@
 
 
     /* =====================================================
-       REDUCED MOTION ACCESSIBILITY
+       REDUCED MOTION
        ===================================================== */
 
     @media
@@ -951,7 +1031,8 @@
       .banner-slide {
         transition: none;
 
-        transform: none !important;
+        transform:
+          none !important;
       }
 
     }
@@ -967,7 +1048,7 @@
 
 
   <!-- =====================================================
-       ROTATING HEADER BANNER
+       ROTATING HEADER
        ===================================================== -->
 
   <header
@@ -976,8 +1057,6 @@
   >
 
 
-    <!-- WSU RED -->
-
     <div
       class="banner-slide banner-slide-1 active"
       aria-hidden="true"
@@ -985,16 +1064,12 @@
     </div>
 
 
-    <!-- DEEP MAROON -->
-
     <div
       class="banner-slide banner-slide-2"
       aria-hidden="true"
     >
     </div>
 
-
-    <!-- CHARCOAL + RED -->
 
     <div
       class="banner-slide banner-slide-3"
@@ -1004,13 +1079,22 @@
 
 
 
-    <!-- BANNER CONTENT -->
+    <!-- =================================================
+         BANNER CONTENT
+         ================================================= -->
 
     <div class="header-content">
 
-      <h1>
-        School of Computer, Data and Mathematical Sciences
+
+      <h1 class="hub-title">
+        HDR and Supervisor Connect at CDMS
       </h1>
+
+
+      <h2 class="school-title">
+        School of Computer, Data and Mathematical Sciences
+      </h2>
+
 
       <p>
         Western Sydney University |
@@ -1018,16 +1102,20 @@
         PhD Research Profiles
       </p>
 
+
     </div>
 
 
 
-    <!-- BANNER INDICATORS -->
+    <!-- =================================================
+         BANNER INDICATORS
+         ================================================= -->
 
     <div
       class="banner-indicators"
       aria-label="Banner images"
     >
+
 
       <button
         class="banner-indicator active"
@@ -1037,6 +1125,7 @@
       >
       </button>
 
+
       <button
         class="banner-indicator"
         type="button"
@@ -1045,6 +1134,7 @@
       >
       </button>
 
+
       <button
         class="banner-indicator"
         type="button"
@@ -1052,6 +1142,7 @@
         aria-label="Show banner style 3"
       >
       </button>
+
 
     </div>
 
@@ -1147,9 +1238,11 @@
 
       <div class="supervisor-finder">
 
+
         <h2>
           Find a Supervisor
         </h2>
+
 
         <p>
           Select a supervisor to view their
@@ -1193,6 +1286,7 @@
 
         </select>
 
+
       </div>
 
 
@@ -1203,9 +1297,11 @@
 
       <div class="sidebar-section">
 
+
         <h2>
           Search CDMS
         </h2>
+
 
         <p>
           Search for supervisors,
@@ -1221,8 +1317,9 @@
           id="openCdmsSearchBtn"
           type="button"
         >
-          Search WSU CDMS
+          Search CDMS
         </button>
+
 
       </div>
 
@@ -1233,6 +1330,7 @@
            =============================================== -->
 
       <div class="sidebar-section">
+
 
         <h2>
           Quick Links
@@ -1272,45 +1370,53 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            WSU Researcher Profiles
+            Researcher Profiles
           </a>
 
         </p>
 
 
-        <p>
+
+        <!-- =============================================
+             RESEARCH AND PUBLICATIONS
+             ============================================= -->
+
+        <div class="quick-subtitle">
+          Research and Publications
+        </div>
+
+
+        <div class="publication-year-links">
+
 
           <a
-            href="mailto:ECS-CDMS-HDR@westernsydney.edu.au"
-          >
-            Contact — CDMS HDR Team
-          </a>
-
-        </p>
-
-
-        <p>
-
-          <a
-            href="mailto:ECS-CDMS-Research@westernsydney.edu.au"
-          >
-            Contact — CDMS Research Team
-          </a>
-
-        </p>
-
-
-        <p>
-
-          <a
-            href="https://www.westernsydney.edu.au/schools/socdms/contact-us"
+            href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/publications/?publicationYear=2026"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Contact CDMS
+            2026
           </a>
 
-        </p>
+
+          <a
+            href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/publications/?publicationYear=2025"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2025
+          </a>
+
+
+          <a
+            href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/publications/?publicationYear=2024"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2024
+          </a>
+
+
+        </div>
 
 
       </div>
@@ -1334,6 +1440,7 @@
 
       <section class="hero">
 
+
         <h2>
           CDMS Research Hub
         </h2>
@@ -1350,6 +1457,7 @@
           and PhD researcher profiles.
 
         </p>
+
 
       </section>
 
@@ -1387,11 +1495,9 @@
 
 
             <p>
-
               Research using repeated patient measures,
               digital health platforms
               and statistical modelling.
-
             </p>
 
 
@@ -1403,16 +1509,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View WSU Research
-              </a>
-
-
-              <a
-                class="contact-link"
-                href="mailto:Y.Guo@westernsydney.edu.au"
-                title="Contact Associate Professor Yi Guo"
-              >
-                Contact
+                View Research
               </a>
 
 
@@ -1439,12 +1536,10 @@
 
 
             <p>
-
               Research in intelligent systems,
               machine learning,
               explainable AI
               and applied computing.
-
             </p>
 
 
@@ -1456,16 +1551,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View WSU Research
-              </a>
-
-
-              <a
-                class="contact-link"
-                href="mailto:Y.Guo@westernsydney.edu.au"
-                title="Contact Associate Professor Yi Guo"
-              >
-                Contact
+                View Research
               </a>
 
 
@@ -1492,12 +1578,10 @@
 
 
             <p>
-
               Research in statistical methods,
               computational modelling,
               uncertainty
               and applied mathematics.
-
             </p>
 
 
@@ -1509,16 +1593,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View WSU Research
-              </a>
-
-
-              <a
-                class="contact-link"
-                href="mailto:Y.Guo@westernsydney.edu.au"
-                title="Contact Associate Professor Yi Guo"
-              >
-                Contact
+                View Research
               </a>
 
 
@@ -1590,13 +1665,11 @@
 
 
             <p>
-
               Research focus:
               longitudinal health data,
               digital health interventions,
               mixed-effects modelling
               and healthcare analytics.
-
             </p>
 
 
@@ -1617,7 +1690,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WSU Research
+                Research
               </a>
 
 
@@ -1663,12 +1736,10 @@
 
 
             <p>
-
               Add research area,
               school affiliation,
               supervisor and publication
               or profile link here.
-
             </p>
 
 
@@ -1720,12 +1791,10 @@
 
 
             <p>
-
               Add research area,
               project title,
               keywords and contact
               or profile link here.
-
             </p>
 
 
@@ -1781,8 +1850,6 @@
 
 
 
-      <!-- PROFILE HEADER -->
-
       <div class="supervisor-profile-header">
 
 
@@ -1797,15 +1864,11 @@
         <div>
 
 
-          <h2
-            id="supervisorName"
-          >
+          <h2 id="supervisorName">
           </h2>
 
 
-          <p
-            id="supervisorTitle"
-          >
+          <p id="supervisorTitle">
             Research Supervisor
           </p>
 
@@ -1816,8 +1879,6 @@
       </div>
 
 
-
-      <!-- PROFILE BODY -->
 
       <div class="supervisor-body">
 
@@ -1855,9 +1916,7 @@
         </h3>
 
 
-        <p
-          id="supervisorThemes"
-        >
+        <p id="supervisorThemes">
         </p>
 
 
@@ -1867,9 +1926,7 @@
         </h3>
 
 
-        <p
-          id="supervisorInterests"
-        >
+        <p id="supervisorInterests">
         </p>
 
 
@@ -1879,14 +1936,10 @@
         </h3>
 
 
-        <ol
-          id="supervisorProjects"
-        >
+        <ol id="supervisorProjects">
         </ol>
 
 
-
-        <!-- CONTACT -->
 
         <h3>
           Contact
@@ -1924,7 +1977,7 @@
 
 
   <!-- =====================================================
-       CDMS SEARCH POPUP
+       SEARCH CDMS POPUP
        ===================================================== -->
 
   <div
@@ -1960,24 +2013,23 @@
 
 
 
-      <!-- SEARCH HEADER -->
+      <!-- ===============================================
+           SEARCH HEADER
+           =============================================== -->
 
       <div class="cdms-search-header">
 
 
-        <h2
-          id="cdmsSearchTitle"
-        >
+        <h2 id="cdmsSearchTitle">
           Search CDMS
         </h2>
 
 
         <p>
-
-          Search official Western Sydney University
-          research pages, researcher profiles,
-          supervisors and Higher Degree Research programs.
-
+          Search research pages,
+          researcher profiles,
+          supervisors and
+          Higher Degree Research programs.
         </p>
 
 
@@ -1985,7 +2037,9 @@
 
 
 
-      <!-- SEARCH FORM -->
+      <!-- ===============================================
+           SEARCH FORM
+           =============================================== -->
 
       <div class="cdms-search-form">
 
@@ -1993,14 +2047,10 @@
 
         <!-- KEYWORD -->
 
-        <div
-          class="cdms-search-field full-width"
-        >
+        <div class="cdms-search-field full-width">
 
 
-          <label
-            for="cdmsKeyword"
-          >
+          <label for="cdmsKeyword">
             Keyword
           </label>
 
@@ -2019,14 +2069,10 @@
 
         <!-- NAME -->
 
-        <div
-          class="cdms-search-field"
-        >
+        <div class="cdms-search-field">
 
 
-          <label
-            for="cdmsName"
-          >
+          <label for="cdmsName">
             Search by Name
           </label>
 
@@ -2045,21 +2091,15 @@
 
         <!-- DEGREE -->
 
-        <div
-          class="cdms-search-field"
-        >
+        <div class="cdms-search-field">
 
 
-          <label
-            for="cdmsDegree"
-          >
+          <label for="cdmsDegree">
             Search by Research Degree
           </label>
 
 
-          <select
-            id="cdmsDegree"
-          >
+          <select id="cdmsDegree">
 
 
             <option value="">
@@ -2099,23 +2139,17 @@
 
 
 
-        <!-- AREA / SUBJECT -->
+        <!-- AREA -->
 
-        <div
-          class="cdms-search-field full-width"
-        >
+        <div class="cdms-search-field full-width">
 
 
-          <label
-            for="cdmsArea"
-          >
+          <label for="cdmsArea">
             Search by Area / Subject
           </label>
 
 
-          <select
-            id="cdmsArea"
-          >
+          <select id="cdmsArea">
 
 
             <option value="">
@@ -2124,9 +2158,7 @@
 
 
 
-            <optgroup
-              label="CDMS Research Areas"
-            >
+            <optgroup label="CDMS Research Areas">
 
 
               <option value="Computer Science">
@@ -2141,6 +2173,11 @@
 
               <option value="Data Science">
                 Data Science
+              </option>
+
+
+              <option value="Statistics">
+                Statistics
               </option>
 
 
@@ -2178,9 +2215,7 @@
 
 
 
-            <optgroup
-              label="Official CDMS Research Themes"
-            >
+            <optgroup label="CDMS Research Themes">
 
 
               <option value="theme-sustainability">
@@ -2208,11 +2243,9 @@
 
 
 
-        <!-- SEARCH ACTIONS -->
+        <!-- ACTIONS -->
 
-        <div
-          class="cdms-search-actions"
-        >
+        <div class="cdms-search-actions">
 
 
           <button
@@ -2220,7 +2253,7 @@
             class="cdms-primary-search"
             id="runCdmsSearchBtn"
           >
-            Search WSU
+            Search CDMS
           </button>
 
 
@@ -2240,21 +2273,19 @@
 
 
 
-      <!-- OFFICIAL WSU LINKS -->
+      <!-- ===============================================
+           RESEARCH LINKS
+           =============================================== -->
 
-      <div
-        class="cdms-search-links"
-      >
+      <div class="cdms-search-links">
 
 
         <h3>
-          Official WSU Research Links
+          Research Links
         </h3>
 
 
-        <div
-          class="cdms-link-grid"
-        >
+        <div class="cdms-link-grid">
 
 
           <a
@@ -2289,7 +2320,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            WSU Research Profiles
+            Research Profiles
           </a>
 
 
@@ -2309,11 +2340,11 @@
 
 
 
-      <!-- CONTACTS -->
+      <!-- ===============================================
+           CONTACTS
+           =============================================== -->
 
-      <div
-        class="cdms-search-contacts"
-      >
+      <div class="cdms-search-contacts">
 
 
         <h3>
@@ -2321,29 +2352,28 @@
         </h3>
 
 
-        <div
-          class="cdms-contact-list"
-        >
+        <div class="cdms-contact-list">
 
 
 
-          <div
-            class="cdms-contact-row"
-          >
+          <!-- ===========================================
+               KURT
+               =========================================== -->
+
+          <div class="cdms-contact-row">
 
 
-            <div
-              class="cdms-contact-person"
-            >
+            <div class="cdms-contact-person">
 
 
               <strong>
-                Associate Professor Yi Guo
+                Professor Kurt Langfeld
               </strong>
 
 
               <span>
-                Associate Dean Research — CDMS
+                Dean — School of Computer,
+                Data and Mathematical Sciences
               </span>
 
 
@@ -2352,7 +2382,7 @@
 
             <a
               class="cdms-contact-button"
-              href="mailto:Y.Guo@westernsydney.edu.au"
+              href="mailto:K.Langfeld@westernsydney.edu.au"
             >
               Contact
             </a>
@@ -2362,24 +2392,23 @@
 
 
 
-          <div
-            class="cdms-contact-row"
-          >
+          <!-- ===========================================
+               KENAN
+               =========================================== -->
+
+          <div class="cdms-contact-row">
 
 
-            <div
-              class="cdms-contact-person"
-            >
+            <div class="cdms-contact-person">
 
 
               <strong>
-                Dr Weisheng Si
+                Associate Professor Kenan M. Matawie
               </strong>
 
 
               <span>
-                HDR Associate Dean,
-                Graduate Studies — CDMS
+                Director, HDR &amp; Honours
               </span>
 
 
@@ -2388,7 +2417,7 @@
 
             <a
               class="cdms-contact-button"
-              href="mailto:W.Si@westernsydney.edu.au"
+              href="mailto:K.Matawie@westernsydney.edu.au"
             >
               Contact
             </a>
@@ -2398,25 +2427,23 @@
 
 
 
-          <div
-            class="cdms-contact-row"
-          >
+          <!-- ===========================================
+               ATHULA
+               =========================================== -->
+
+          <div class="cdms-contact-row">
 
 
-            <div
-              class="cdms-contact-person"
-            >
+            <div class="cdms-contact-person">
 
 
               <strong>
-                CDMS HDR Team
+                Professor Athula Ginige
               </strong>
 
 
               <span>
-                HDR administration,
-                milestones,
-                supervision and candidate support
+                Director, Research
               </span>
 
 
@@ -2425,7 +2452,7 @@
 
             <a
               class="cdms-contact-button"
-              href="mailto:ECS-CDMS-HDR@westernsydney.edu.au"
+              href="mailto:A.Ginige@westernsydney.edu.au"
             >
               Contact
             </a>
@@ -2435,24 +2462,23 @@
 
 
 
-          <div
-            class="cdms-contact-row"
-          >
+          <!-- ===========================================
+               LAILA
+               =========================================== -->
+
+          <div class="cdms-contact-row">
 
 
-            <div
-              class="cdms-contact-person"
-            >
+            <div class="cdms-contact-person">
 
 
               <strong>
-                CDMS Research Team
+                Laila Alkhouri
               </strong>
 
 
               <span>
-                Research support,
-                grants and research development
+                CDMS HDR Admin Contact
               </span>
 
 
@@ -2461,7 +2487,7 @@
 
             <a
               class="cdms-contact-button"
-              href="mailto:ECS-CDMS-Research@westernsydney.edu.au"
+              href="mailto:L.Alkhouri@westernsydney.edu.au"
             >
               Contact
             </a>
@@ -2491,6 +2517,7 @@
 
     Unofficial research profile page for
     CDMS-related HDR navigation.
+
     For official information,
     visit Western Sydney University.
 
@@ -2539,11 +2566,9 @@
 
         function(slide) {
 
-          slide
-            .classList
-            .remove(
-              "active"
-            );
+          slide.classList.remove(
+            "active"
+          );
 
         }
 
@@ -2554,11 +2579,9 @@
 
         function(indicator) {
 
-          indicator
-            .classList
-            .remove(
-              "active"
-            );
+          indicator.classList.remove(
+            "active"
+          );
 
         }
 
@@ -2643,32 +2666,31 @@
       ) {
 
 
-        indicator
-          .addEventListener(
+        indicator.addEventListener(
 
-            "click",
+          "click",
 
-            function() {
-
-
-              const slideIndex =
-
-                Number(
-                  this.dataset.slide
-                );
+          function() {
 
 
-              showBannerSlide(
-                slideIndex
+            const slideIndex =
+
+              Number(
+                this.dataset.slide
               );
 
 
-              startBannerRotation();
+            showBannerSlide(
+              slideIndex
+            );
 
 
-            }
+            startBannerRotation();
 
-          );
+
+          }
+
+        );
 
 
       }
@@ -2681,7 +2703,7 @@
 
 
     /* =====================================================
-       SEARCH POPUP ELEMENTS
+       SEARCH POPUP
        ===================================================== */
 
     const cdmsSearchModal =
@@ -2728,7 +2750,7 @@
 
 
     /* =====================================================
-       OFFICIAL WSU DEGREE LINKS
+       DEGREE LINKS
        ===================================================== */
 
     const cdmsDegreeLinks = {
@@ -2764,7 +2786,7 @@
 
 
     /* =====================================================
-       CDMS RESEARCH THEME LINKS
+       RESEARCH THEME LINKS
        ===================================================== */
 
     const cdmsThemeLinks = {
@@ -2790,7 +2812,7 @@
 
 
     /* =====================================================
-       CDMS AREA LINKS
+       RESEARCH AREA LINKS
        ===================================================== */
 
     const cdmsAreaLinks = {
@@ -2809,6 +2831,11 @@
       "Data Science":
 
         "https://www.westernsydney.edu.au/schools/socdms/research",
+
+
+      "Statistics":
+
+        "https://www.westernsydney.edu.au/schools/socdms/research/foundations-algorithms-and-discovery",
 
 
       "Mathematics Statistics":
@@ -2846,10 +2873,20 @@
 
 
     /* =====================================================
-       KNOWN WSU RESEARCHER LINKS
+       KNOWN RESEARCHER LINKS
        ===================================================== */
 
     const academicLinks = {
+
+
+      "kurt langfeld":
+
+        "https://researchers.westernsydney.edu.au/en/persons/kurt-langfeld/",
+
+
+      "professor kurt langfeld":
+
+        "https://researchers.westernsydney.edu.au/en/persons/kurt-langfeld/",
 
 
       "kenan matawie":
@@ -2869,7 +2906,17 @@
 
       "associate professor kenan matawie":
 
-        "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/"
+        "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/",
+
+
+      "athula ginige":
+
+        "https://researchers.westernsydney.edu.au/en/persons/athula-ginige/",
+
+
+      "professor athula ginige":
+
+        "https://researchers.westernsydney.edu.au/en/persons/athula-ginige/"
 
 
     };
@@ -2881,14 +2928,14 @@
       "https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor";
 
 
-    const wsuResearchProfiles =
+    const researchProfilesBase =
 
       "https://researchers.westernsydney.edu.au/";
 
 
 
     /* =====================================================
-       OPEN SEARCH
+       OPEN SEARCH POPUP
        ===================================================== */
 
     function openCdmsSearch() {
@@ -2936,7 +2983,7 @@
 
 
     /* =====================================================
-       CLOSE SEARCH
+       CLOSE SEARCH POPUP
        ===================================================== */
 
     function closeCdmsSearch() {
@@ -2965,7 +3012,7 @@
 
 
     /* =====================================================
-       CLEAR SEARCH
+       RESET SEARCH
        ===================================================== */
 
     function resetCdmsSearch() {
@@ -3015,10 +3062,10 @@
 
 
     /* =====================================================
-       DIRECT WSU RESEARCH PROFILES SEARCH
+       RESEARCH PROFILE SEARCH
        ===================================================== */
 
-    function openWsuResearchSearch(
+    function openResearchSearch(
       query
     ) {
 
@@ -3033,7 +3080,7 @@
 
         window.open(
 
-          wsuResearchProfiles,
+          researchProfilesBase,
 
           "_blank",
 
@@ -3137,7 +3184,7 @@
 
 
 
-      /* KNOWN ACADEMIC */
+      /* KNOWN PERSON */
 
       if (academicName) {
 
@@ -3179,7 +3226,7 @@
 
 
 
-      /* NAME / KEYWORD SEARCH */
+      /* NAME / KEYWORD */
 
       if (
         academicName ||
@@ -3223,7 +3270,7 @@
         }
 
 
-        openWsuResearchSearch(
+        openResearchSearch(
 
           searchTerms.join(
             " "
@@ -3269,7 +3316,7 @@
 
 
 
-      /* OFFICIAL RESEARCH THEME */
+      /* THEME */
 
       if (
         area &&
@@ -3299,7 +3346,7 @@
 
 
 
-      /* SUBJECT AREA */
+      /* AREA */
 
       if (
         area &&
@@ -3437,9 +3484,7 @@
 
 
 
-      /* ===============================================
-         KENAN M. MATAWIE
-         =============================================== */
+      /* KENAN */
 
       kenan: {
 
@@ -3558,9 +3603,7 @@
 
 
 
-      /* ===============================================
-         DEMONSTRATION SUPERVISOR 2
-         =============================================== */
+      /* DEMO 2 */
 
       supervisor2: {
 
@@ -3631,9 +3674,7 @@
 
 
 
-      /* ===============================================
-         DEMONSTRATION SUPERVISOR 3
-         =============================================== */
+      /* DEMO 3 */
 
       supervisor3: {
 
@@ -3702,9 +3743,7 @@
 
 
 
-      /* ===============================================
-         DEMONSTRATION SUPERVISOR 4
-         =============================================== */
+      /* DEMO 4 */
 
       supervisor4: {
 
@@ -3809,8 +3848,6 @@
 
 
 
-      /* NAME */
-
       document
         .getElementById(
           "supervisorName"
@@ -3821,8 +3858,6 @@
 
 
 
-      /* TITLE */
-
       document
         .getElementById(
           "supervisorTitle"
@@ -3832,8 +3867,6 @@
         supervisor.title;
 
 
-
-      /* PHOTO */
 
       const photo =
 
@@ -3853,8 +3886,6 @@
         supervisor.name;
 
 
-
-      /* DEMO NOTICE */
 
       const demoNotice =
 
@@ -3890,8 +3921,6 @@
 
 
 
-      /* AVAILABILITY */
-
       const availability =
 
         document
@@ -3901,7 +3930,6 @@
 
 
       availability.innerHTML =
-
         "";
 
 
@@ -3942,8 +3970,6 @@
 
 
 
-      /* THEMES */
-
       document
         .getElementById(
           "supervisorThemes"
@@ -3953,8 +3979,6 @@
         supervisor.themes;
 
 
-
-      /* INTERESTS */
 
       document
         .getElementById(
@@ -3966,8 +3990,6 @@
 
 
 
-      /* PROJECTS */
-
       const projects =
 
         document
@@ -3977,7 +3999,6 @@
 
 
       projects.innerHTML =
-
         "";
 
 
@@ -4013,9 +4034,7 @@
 
 
 
-      /* =================================================
-         CONTACT
-         ================================================= */
+      /* CONTACT */
 
       const contact =
 
@@ -4026,7 +4045,6 @@
 
 
       contact.innerHTML =
-
         "";
 
 
@@ -4071,10 +4089,9 @@
           supervisor.name;
 
 
-        contact
-          .appendChild(
-            emailButton
-          );
+        contact.appendChild(
+          emailButton
+        );
 
 
 
@@ -4096,10 +4113,9 @@
           supervisor.email;
 
 
-        contact
-          .appendChild(
-            emailText
-          );
+        contact.appendChild(
+          emailText
+        );
 
 
       } else {
@@ -4131,10 +4147,9 @@
           "Contact information is not currently available.";
 
 
-        contact
-          .appendChild(
-            unavailable
-          );
+        contact.appendChild(
+          unavailable
+        );
 
 
       }
@@ -4152,7 +4167,6 @@
 
 
       links.innerHTML =
-
         "";
 
 
@@ -4177,10 +4191,9 @@
           "Demonstration profile – official profile links have not been added.";
 
 
-        links
-          .appendChild(
-            text
-          );
+        links.appendChild(
+          text
+        );
 
 
       } else {
@@ -4221,10 +4234,9 @@
                 link.label;
 
 
-              links
-                .appendChild(
-                  anchor
-                );
+              links.appendChild(
+                anchor
+              );
 
 
             }
@@ -4236,8 +4248,6 @@
 
 
 
-      /* SHOW POPUP */
-
       const modal =
 
         document
@@ -4246,23 +4256,13 @@
           );
 
 
-      modal
-        .style
-        .display =
-
+      modal.style.display =
         "block";
 
 
-      document
-        .body
-        .style
-        .overflow =
-
+      document.body.style.overflow =
         "hidden";
 
-
-
-      /* RESET SCROLL */
 
       const modalContent =
 
@@ -4273,7 +4273,6 @@
 
 
       modalContent.scrollTop =
-
         0;
 
 
@@ -4298,11 +4297,7 @@
         "none";
 
 
-      document
-        .body
-        .style
-        .overflow =
-
+      document.body.style.overflow =
         "";
 
 
@@ -4320,40 +4315,39 @@
 
 
     /* =====================================================
-       CLICK OUTSIDE SUPERVISOR POPUP
+       CLICK OUTSIDE
        ===================================================== */
 
-    window
-      .addEventListener(
+    window.addEventListener(
 
-        "click",
+      "click",
 
-        function(event) {
-
-
-          const modal =
-
-            document
-              .getElementById(
-                "supervisorModal"
-              );
+      function(event) {
 
 
-          if (
-            event.target ===
-            modal
-          ) {
+        const modal =
+
+          document
+            .getElementById(
+              "supervisorModal"
+            );
 
 
-            closeSupervisorProfile();
+        if (
+          event.target ===
+          modal
+        ) {
 
 
-          }
+          closeSupervisorProfile();
 
 
         }
 
-      );
+
+      }
+
+    );
 
 
 
@@ -4361,73 +4355,64 @@
        ESCAPE KEY
        ===================================================== */
 
-    document
-      .addEventListener(
+    document.addEventListener(
 
-        "keydown",
+      "keydown",
 
-        function(event) {
-
-
-          if (
-            event.key !==
-            "Escape"
-          ) {
-
-            return;
-
-          }
+      function(event) {
 
 
+        if (
+          event.key !==
+          "Escape"
+        ) {
 
-          /* SEARCH POPUP */
+          return;
 
-          if (
-            cdmsSearchModal
-              .classList
-              .contains(
-                "active"
-              )
-          ) {
+        }
 
 
-            closeCdmsSearch();
+        if (
+          cdmsSearchModal
+            .classList
+            .contains(
+              "active"
+            )
+        ) {
 
 
-            return;
+          closeCdmsSearch();
 
 
-          }
-
-
-
-          /* SUPERVISOR POPUP */
-
-          const modal =
-
-            document
-              .getElementById(
-                "supervisorModal"
-              );
-
-
-          if (
-            modal
-              .style
-              .display ===
-            "block"
-          ) {
-
-
-            closeSupervisorProfile();
-
-
-          }
+          return;
 
 
         }
 
-      );
+
+        const modal =
+
+          document
+            .getElementById(
+              "supervisorModal"
+            );
+
+
+        if (
+          modal.style.display ===
+          "block"
+        ) {
+
+
+          closeSupervisorProfile();
+
+
+        }
+
+
+      }
+
+    );
 
 
   </script>

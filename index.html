@@ -14,20 +14,10 @@
     HDR and Supervisor Connect at CDMS
   </title>
 
-
-  <!-- =====================================================
-       EXTERNAL CSS
-       ===================================================== -->
-
   <link
     rel="stylesheet"
     href="style.css"
   >
-
-
-  <!-- =====================================================
-       PAGE-SPECIFIC STYLES
-       ===================================================== -->
 
   <style>
 
@@ -53,6 +43,7 @@
       font: inherit;
     }
 
+
     /* =====================================================
        SIDEBAR
        ===================================================== */
@@ -62,7 +53,6 @@
       padding-top: 0;
       border-top: none;
     }
-
 
     .sidebar-shortcut,
     .search-button,
@@ -78,16 +68,26 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+
       gap: 10px;
+
       padding: 0 14px;
+
       border: none;
+
       background: var(--wsu-red);
+
       color: #ffffff;
+
       font-weight: 700;
       line-height: 1.2;
+
       text-decoration: none;
+
       cursor: pointer;
+
       text-align: left;
+
       transition:
         background 0.2s ease,
         transform 0.2s ease,
@@ -103,16 +103,24 @@
 
     .sidebar-shortcut:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(153, 0, 51, 0.18);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(153, 0, 51, 0.18);
     }
 
     .sidebar-shortcut svg {
       width: 20px;
       height: 20px;
+
       flex: 0 0 20px;
+
       fill: none;
+
       stroke: currentColor;
+
       stroke-width: 1.9;
+
       stroke-linecap: round;
       stroke-linejoin: round;
     }
@@ -123,32 +131,66 @@
 
     .supervisor-select {
       display: block;
+
       height: var(--ui-control-height);
-      padding: 0 42px 0 13px;
-      border: 1px solid var(--ui-border);
+
+      padding:
+        0 42px
+        0 13px;
+
+      border:
+        1px solid
+        var(--ui-border);
+
       background-color: #ffffff;
+
       color: var(--dark);
+
       cursor: pointer;
+
       appearance: none;
       -webkit-appearance: none;
+
       background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='m5 7 5 5 5-5'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 13px center;
-      background-size: 16px;
+
+      background-repeat:
+        no-repeat;
+
+      background-position:
+        right 13px center;
+
+      background-size:
+        16px;
+
       transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
     }
 
     .supervisor-select:hover {
-      border-color: #b7b7b7;
+      border-color:
+        #b7b7b7;
     }
 
     .supervisor-select:focus {
       outline: none;
-      border-color: var(--wsu-red);
-      box-shadow: 0 0 0 3px rgba(153, 0, 51, 0.10);
+
+      border-color:
+        var(--wsu-red);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(153, 0, 51, 0.10);
+    }
+
+    .supervisor-select.supervisor-highlight {
+      border-color:
+        var(--wsu-red);
+
+      box-shadow:
+        0 0 0 4px
+        rgba(153, 0, 51, 0.13);
     }
 
     .profile-shortcut {
@@ -157,86 +199,131 @@
 
     .search-button {
       display: flex;
+
       align-items: center;
       justify-content: center;
-      height: var(--ui-control-height);
-      padding: 0 14px;
+
+      height:
+        var(--ui-control-height);
+
+      padding:
+        0 14px;
+
       border: none;
-      background: var(--wsu-red);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
+
+      background:
+        var(--wsu-red);
+
+      color:
+        white;
+
+      font-weight:
+        700;
+
+      cursor:
+        pointer;
+
       transition:
         background 0.2s ease,
         box-shadow 0.2s ease;
     }
 
     .search-button:hover {
-      background: var(--wsu-red-dark);
+      background:
+        var(--wsu-red-dark);
     }
 
     .search-button:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(153, 0, 51, 0.18);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(153, 0, 51, 0.18);
     }
 
     .sidebar-section {
       margin-top: 28px;
+
       padding-top: 22px;
-      border-top: 1px solid var(--border);
+
+      border-top:
+        1px solid
+        var(--border);
     }
 
 
-
     /* =====================================================
-       QUICK LINKS - PUBLICATIONS
+       QUICK LINKS
        ===================================================== */
 
     .quick-subtitle {
       margin-top: 20px;
       margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--dark);
-    }
 
+      font-size: 14px;
+
+      font-weight: 700;
+
+      color:
+        var(--dark);
+    }
 
     .publication-year-links {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 8px;
+
       margin-top: 8px;
     }
 
-
     .publication-year-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      display:
+        inline-flex;
 
-      min-width: 52px;
-      min-height: 32px;
+      align-items:
+        center;
 
-      padding: 0 10px;
+      justify-content:
+        center;
 
-      border: 1px solid var(--wsu-red);
-      border-radius: 6px;
+      min-width:
+        52px;
 
-      color: var(--wsu-red);
+      min-height:
+        32px;
 
-      font-size: 13px;
-      font-weight: 700;
+      padding:
+        0 10px;
 
-      text-decoration: none;
+      border:
+        1px solid
+        var(--wsu-red);
 
-      background: white;
+      border-radius:
+        6px;
+
+      color:
+        var(--wsu-red);
+
+      font-size:
+        13px;
+
+      font-weight:
+        700;
+
+      text-decoration:
+        none;
+
+      background:
+        white;
     }
-
 
     .publication-year-links a:hover {
-      background: #fff3f7;
+      background:
+        #fff3f7;
     }
-
 
 
     /* =====================================================
@@ -244,70 +331,91 @@
        ===================================================== */
 
     header.banner-slider {
-      position: relative;
+      position:
+        relative;
 
-      min-height: 370px;
+      min-height:
+        370px;
 
-      padding: 45px 40px;
+      padding:
+        45px 40px;
 
-      display: flex;
-      align-items: center;
+      display:
+        flex;
 
-      overflow: hidden;
+      align-items:
+        center;
 
-      color: white;
+      overflow:
+        hidden;
 
-      background: none !important;
-      background-image: none !important;
+      color:
+        white;
 
-      isolation: isolate;
+      background:
+        none !important;
+
+      background-image:
+        none !important;
+
+      isolation:
+        isolate;
     }
 
-
     .banner-slide {
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
-      z-index: 0;
+      z-index:
+        0;
 
-      opacity: 0;
+      opacity:
+        0;
 
-      background-size: cover;
+      background-size:
+        cover;
 
-      background-position: center center;
+      background-position:
+        center center;
 
-      background-repeat: no-repeat;
+      background-repeat:
+        no-repeat;
 
       transition:
         opacity 1.35s ease-in-out,
         transform 6s ease;
 
-      transform: scale(1.01);
+      transform:
+        scale(1.01);
     }
-
 
     .banner-slide.active {
-      opacity: 1;
+      opacity:
+        1;
 
-      transform: scale(1.035);
+      transform:
+        scale(1.035);
     }
 
-
-    /* Desktop / laptop banner framing */
     @media (min-width: 641px) {
-      .banner-slide {
-        background-position: center 20%;
-      }
-    }
 
+      .banner-slide {
+        background-position:
+          center 20%;
+      }
+
+    }
 
 
     /* =====================================================
-       BANNER 1 - CLASSIC RED
+       BANNER 1
        ===================================================== */
 
     .banner-slide-1 {
+
       background-image:
 
         linear-gradient(
@@ -326,12 +434,12 @@
     }
 
 
-
     /* =====================================================
-       BANNER 2 - DEEP MAROON
+       BANNER 2
        ===================================================== */
 
     .banner-slide-2 {
+
       background-image:
 
         linear-gradient(
@@ -351,12 +459,12 @@
     }
 
 
-
     /* =====================================================
-       BANNER 3 - CHARCOAL / RED
+       BANNER 3
        ===================================================== */
 
     .banner-slide-3 {
+
       background-image:
 
         linear-gradient(
@@ -376,66 +484,80 @@
     }
 
 
-
     /* =====================================================
        BANNER CONTENT
        ===================================================== */
 
     header.banner-slider .header-content {
-      position: relative;
+      position:
+        relative;
 
-      z-index: 5;
+      z-index:
+        5;
 
-      max-width: 950px;
+      max-width:
+        950px;
     }
-
 
     header.banner-slider .hub-title {
-      margin: 0 0 16px;
+      margin:
+        0 0 16px;
 
-      font-size: clamp(40px, 5vw, 62px);
+      font-size:
+        clamp(40px, 5vw, 62px);
 
-      line-height: 1.06;
+      line-height:
+        1.06;
 
-      font-weight: 800;
+      font-weight:
+        800;
 
-      color: #ffffff;
+      color:
+        #ffffff;
 
-      letter-spacing: -0.7px;
+      letter-spacing:
+        -0.7px;
 
       text-shadow:
-        0 3px 12px rgba(0, 0, 0, 0.58);
+        0 3px 12px
+        rgba(0, 0, 0, 0.58);
     }
-
 
     header.banner-slider .school-title {
-      margin: 0 0 11px;
+      margin:
+        0 0 11px;
 
-      font-size: clamp(22px, 2.5vw, 31px);
+      font-size:
+        clamp(22px, 2.5vw, 31px);
 
-      line-height: 1.2;
+      line-height:
+        1.2;
 
-      font-weight: 600;
+      font-weight:
+        600;
 
-      color: #ffffff;
+      color:
+        #ffffff;
 
       text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.52);
+        0 2px 8px
+        rgba(0, 0, 0, 0.52);
     }
 
-
     header.banner-slider .header-content p {
-      margin: 0;
+      margin:
+        0;
 
-      font-size: 17px;
+      font-size:
+        17px;
 
       color:
         rgba(255, 255, 255, 0.95);
 
       text-shadow:
-        0 2px 7px rgba(0, 0, 0, 0.50);
+        0 2px 7px
+        rgba(0, 0, 0, 0.50);
     }
-
 
 
     /* =====================================================
@@ -443,35 +565,47 @@
        ===================================================== */
 
     .banner-indicators {
-      position: absolute;
+      position:
+        absolute;
 
-      z-index: 10;
+      z-index:
+        10;
 
-      left: 40px;
+      left:
+        40px;
 
-      bottom: 22px;
+      bottom:
+        22px;
 
-      display: flex;
+      display:
+        flex;
 
-      gap: 8px;
+      gap:
+        8px;
     }
 
-
     .banner-indicator {
-      width: 9px;
-      height: 9px;
+      width:
+        9px;
 
-      padding: 0;
+      height:
+        9px;
+
+      padding:
+        0;
 
       border:
-        1px solid rgba(255, 255, 255, 0.8);
+        1px solid
+        rgba(255, 255, 255, 0.8);
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
       background:
         rgba(255, 255, 255, 0.30);
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
       transition:
         width 0.25s ease,
@@ -479,15 +613,16 @@
         background 0.25s ease;
     }
 
-
     .banner-indicator.active {
-      width: 27px;
+      width:
+        27px;
 
-      border-radius: 8px;
+      border-radius:
+        8px;
 
-      background: #ffffff;
+      background:
+        #ffffff;
     }
-
 
 
     /* =====================================================
@@ -495,51 +630,178 @@
        ===================================================== */
 
     .card-actions {
-      display: flex;
+      display:
+        flex;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      gap: 10px;
+      gap:
+        10px;
 
-      margin-top: 16px;
+      margin-top:
+        16px;
     }
-
 
     .card-actions a {
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      min-height: 38px;
+      min-height:
+        38px;
 
-      padding: 0 14px;
+      padding:
+        0 14px;
 
-      border-radius: 7px;
+      border-radius:
+        7px;
 
-      text-decoration: none;
+      text-decoration:
+        none;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      box-sizing: border-box;
+      box-sizing:
+        border-box;
     }
-
 
     .card-actions .contact-link {
       border:
-        1px solid var(--wsu-red);
+        1px solid
+        var(--wsu-red);
 
-      background: white;
+      background:
+        white;
 
-      color: var(--wsu-red);
+      color:
+        var(--wsu-red);
     }
-
 
     .card-actions .contact-link:hover {
-      background: #fff3f7;
+      background:
+        #fff3f7;
     }
 
+
+    /* =====================================================
+       COURSE CARDS
+       ===================================================== */
+
+    .course-intro {
+      margin:
+        0 0 20px;
+
+      color:
+        #555555;
+
+      line-height:
+        1.6;
+    }
+
+    .course-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
+      gap:
+        18px;
+    }
+
+    .course-card {
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      min-height:
+        100%;
+    }
+
+    .course-card h3 {
+      margin-bottom:
+        8px;
+    }
+
+    .course-code {
+      margin:
+        0 0 14px;
+
+      color:
+        #666666;
+
+      font-size:
+        13px;
+
+      font-weight:
+        700;
+    }
+
+    .course-card ul {
+      margin:
+        14px 0 18px;
+
+      padding-left:
+        20px;
+
+      color:
+        #4f4f4f;
+
+      line-height:
+        1.55;
+    }
+
+    .course-card li {
+      margin-bottom:
+        7px;
+    }
+
+    .course-card .card-actions {
+      margin-top:
+        auto;
+
+      padding-top:
+        4px;
+    }
+
+    .course-card .course-secondary-link {
+      border:
+        1px solid
+        var(--wsu-red);
+
+      background:
+        white;
+
+      color:
+        var(--wsu-red);
+
+      cursor:
+        pointer;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .course-card .course-secondary-link:hover {
+      background:
+        #fff3f7;
+
+      color:
+        var(--wsu-red-dark);
+    }
 
 
     /* =====================================================
@@ -547,44 +809,57 @@
        ===================================================== */
 
     .supervisor-contact {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      gap: 12px;
+      gap:
+        12px;
 
-      margin-bottom: 24px;
+      margin-bottom:
+        24px;
     }
 
-
     .supervisor-contact-button {
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      min-height: 42px;
+      min-height:
+        42px;
 
-      padding: 0 20px;
+      padding:
+        0 20px;
 
-      border-radius: 7px;
+      border-radius:
+        7px;
 
-      background: var(--wsu-red);
+      background:
+        var(--wsu-red);
 
-      color: white;
+      color:
+        white;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      text-decoration: none;
+      text-decoration:
+        none;
 
       transition:
         background 0.2s ease,
         transform 0.2s ease;
     }
-
 
     .supervisor-contact-button:hover {
       background:
@@ -594,24 +869,27 @@
         translateY(-1px);
     }
 
-
     .supervisor-email-text {
-      color: #666666;
+      color:
+        #666666;
 
-      font-size: 14px;
+      font-size:
+        14px;
 
-      word-break: break-word;
+      word-break:
+        break-word;
     }
-
 
     .supervisor-contact-unavailable {
-      margin: 0;
+      margin:
+        0;
 
-      color: #777777;
+      color:
+        #777777;
 
-      font-size: 14px;
+      font-size:
+        14px;
     }
-
 
 
     /* =====================================================
@@ -619,31 +897,39 @@
        ===================================================== */
 
     .cdms-search-modal {
-      position: fixed;
+      position:
+        fixed;
 
-      inset: 0;
+      inset:
+        0;
 
-      z-index: 6000;
+      z-index:
+        6000;
 
-      display: none;
+      display:
+        none;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      padding: 24px;
+      padding:
+        24px;
     }
-
 
     .cdms-search-modal.active {
-      display: flex;
+      display:
+        flex;
     }
 
-
     .cdms-search-backdrop {
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
       background:
         rgba(0, 0, 0, 0.60);
@@ -652,69 +938,86 @@
         blur(3px);
     }
 
-
     .cdms-search-dialog {
-      position: relative;
+      position:
+        relative;
 
-      z-index: 6001;
+      z-index:
+        6001;
 
       width:
         min(760px, 100%);
 
-      max-height: 90vh;
+      max-height:
+        90vh;
 
-      overflow-y: auto;
+      overflow-y:
+        auto;
 
-      background: white;
+      background:
+        white;
 
-      border-radius: 14px;
+      border-radius:
+        14px;
 
-      padding: 34px;
+      padding:
+        34px;
 
-      box-sizing: border-box;
+      box-sizing:
+        border-box;
 
       box-shadow:
         0 20px 60px
         rgba(0, 0, 0, 0.28);
     }
 
-
     .cdms-search-close {
-      position: absolute;
+      position:
+        absolute;
 
-      top: 14px;
-      right: 18px;
+      top:
+        14px;
 
-      width: 42px;
-      height: 42px;
+      right:
+        18px;
 
-      border: none;
+      width:
+        42px;
+
+      height:
+        42px;
+
+      border:
+        none;
 
       background:
         transparent;
 
-      color: #555555;
+      color:
+        #555555;
 
-      font-size: 34px;
+      font-size:
+        34px;
 
-      line-height: 1;
+      line-height:
+        1;
 
-      cursor: pointer;
+      cursor:
+        pointer;
     }
-
 
     .cdms-search-close:hover {
       color:
         var(--wsu-red);
     }
 
-
     .cdms-search-header {
-      padding-right: 48px;
+      padding-right:
+        48px;
 
-      margin-bottom: 25px;
+      margin-bottom:
+        25px;
     }
-
 
     .cdms-search-header h2 {
       margin:
@@ -723,162 +1026,228 @@
       color:
         var(--wsu-red);
 
-      font-size: 30px;
+      font-size:
+        30px;
     }
-
 
     .cdms-search-header p {
-      margin: 0;
+      margin:
+        0;
 
-      color: #555555;
+      color:
+        #555555;
 
-      line-height: 1.55;
+      line-height:
+        1.55;
     }
 
-
     .cdms-search-form {
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
         1fr 1fr;
 
-      gap: 18px;
+      gap:
+        18px;
     }
-
 
     .cdms-search-field {
-      display: flex;
+      display:
+        flex;
 
-      flex-direction: column;
+      flex-direction:
+        column;
 
-      gap: 7px;
+      gap:
+        7px;
     }
-
 
     .cdms-search-field.full-width {
       grid-column:
         1 / -1;
     }
 
-
     .cdms-search-field label {
       color:
         var(--dark);
 
-      font-size: 14px;
+      font-size:
+        14px;
 
-      font-weight: 700;
+      font-weight:
+        700;
     }
-
 
     .cdms-search-field input,
     .cdms-search-field select {
-      width: 100%;
-      height: var(--ui-control-height);
-      padding: 0 13px;
-      border: 1px solid var(--ui-border);
-      border-radius: var(--ui-radius);
-      background-color: #ffffff;
-      color: var(--dark);
-      font-size: 15px;
-      line-height: 1.2;
-      box-sizing: border-box;
+      width:
+        100%;
+
+      height:
+        var(--ui-control-height);
+
+      padding:
+        0 13px;
+
+      border:
+        1px solid
+        var(--ui-border);
+
+      border-radius:
+        var(--ui-radius);
+
+      background-color:
+        #ffffff;
+
+      color:
+        var(--dark);
+
+      font-size:
+        15px;
+
+      line-height:
+        1.2;
+
+      box-sizing:
+        border-box;
+
       transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
     }
 
     .cdms-search-field input::placeholder {
-      color: var(--ui-placeholder);
-      opacity: 1;
+      color:
+        var(--ui-placeholder);
+
+      opacity:
+        1;
     }
 
     .cdms-search-field select {
-      padding-right: 42px;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
+      padding-right:
+        42px;
+
+      cursor:
+        pointer;
+
+      appearance:
+        none;
+
+      -webkit-appearance:
+        none;
+
       background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='m5 7 5 5 5-5'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 13px center;
-      background-size: 16px;
+
+      background-repeat:
+        no-repeat;
+
+      background-position:
+        right 13px center;
+
+      background-size:
+        16px;
     }
 
     .cdms-search-field input:hover,
     .cdms-search-field select:hover {
-      border-color: #b7b7b7;
+      border-color:
+        #b7b7b7;
     }
 
     .cdms-search-field input:focus,
     .cdms-search-field select:focus {
-      outline: none;
-      border-color: var(--wsu-red);
-      box-shadow: 0 0 0 3px rgba(153, 0, 51, 0.10);
-    }
+      outline:
+        none;
 
+      border-color:
+        var(--wsu-red);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(153, 0, 51, 0.10);
+    }
 
     .cdms-search-actions {
       grid-column:
         1 / -1;
 
-      display: flex;
+      display:
+        flex;
 
-      gap: 12px;
+      gap:
+        12px;
 
-      margin-top: 3px;
+      margin-top:
+        3px;
     }
-
 
     .cdms-primary-search,
     .cdms-reset-search {
-      height: var(--ui-control-height);
-      padding: 0 18px;
-      border-radius: var(--ui-radius);
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1;
-      box-sizing: border-box;
-      cursor: pointer;
+      height:
+        var(--ui-control-height);
+
+      padding:
+        0 18px;
+
+      border-radius:
+        var(--ui-radius);
+
+      font-size:
+        15px;
+
+      font-weight:
+        700;
+
+      line-height:
+        1;
+
+      box-sizing:
+        border-box;
+
+      cursor:
+        pointer;
     }
 
-
     .cdms-primary-search {
-      flex: 1;
+      flex:
+        1;
 
-      border: none;
+      border:
+        none;
 
       background:
         var(--wsu-red);
 
-      color: white;
+      color:
+        white;
     }
-
 
     .cdms-primary-search:hover {
       background:
         var(--wsu-red-dark);
     }
 
-
     .cdms-reset-search {
-      min-width: 110px;
+      min-width:
+        110px;
 
       border:
         1px solid #cccccc;
 
-      background: white;
+      background:
+        white;
 
       color:
         var(--dark);
     }
 
-
     .cdms-reset-search:hover {
       background:
         #f5f5f5;
     }
-
 
 
     /* =====================================================
@@ -887,14 +1256,16 @@
 
     .cdms-search-links,
     .cdms-search-contacts {
-      margin-top: 24px;
+      margin-top:
+        24px;
 
-      padding-top: 20px;
+      padding-top:
+        20px;
 
       border-top:
-        1px solid var(--border);
+        1px solid
+        var(--border);
     }
-
 
     .cdms-search-links h3,
     .cdms-search-contacts h3 {
@@ -904,31 +1275,34 @@
       color:
         var(--dark);
 
-      font-size: 17px;
+      font-size:
+        17px;
     }
 
-
     .cdms-link-grid {
-      display: flex;
+      display:
+        flex;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
       gap:
         10px 18px;
     }
 
-
     .cdms-link-grid a {
       color:
         var(--wsu-red);
 
-      font-size: 14px;
+      font-size:
+        14px;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      text-decoration: none;
+      text-decoration:
+        none;
     }
-
 
     .cdms-link-grid a:hover {
       text-decoration:
@@ -936,27 +1310,30 @@
     }
 
 
-
     /* =====================================================
-       CONTACT LIST
+       SEARCH CONTACT LIST
        ===================================================== */
 
     .cdms-contact-list {
-      display: grid;
+      display:
+        grid;
 
-      gap: 10px;
+      gap:
+        10px;
     }
 
-
     .cdms-contact-row {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
       justify-content:
         space-between;
 
-      gap: 16px;
+      gap:
+        16px;
 
       padding:
         12px 0;
@@ -965,35 +1342,37 @@
         1px solid #eeeeee;
     }
 
-
     .cdms-contact-row:last-child {
-      border-bottom: none;
+      border-bottom:
+        none;
     }
-
 
     .cdms-contact-person {
-      min-width: 0;
+      min-width:
+        0;
     }
 
-
     .cdms-contact-person strong {
-      display: block;
+      display:
+        block;
 
       color:
         var(--dark);
     }
 
-
     .cdms-contact-person span {
-      display: block;
+      display:
+        block;
 
-      margin-top: 3px;
+      margin-top:
+        3px;
 
-      color: #666666;
+      color:
+        #666666;
 
-      font-size: 13px;
+      font-size:
+        13px;
     }
-
 
     .cdms-contact-button {
       flex:
@@ -1002,30 +1381,37 @@
       display:
         inline-flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      min-height: 38px;
+      min-height:
+        38px;
 
       padding:
         0 14px;
 
       border:
-        1px solid var(--wsu-red);
+        1px solid
+        var(--wsu-red);
 
-      border-radius: 7px;
+      border-radius:
+        7px;
 
       color:
         var(--wsu-red);
 
-      font-size: 14px;
+      font-size:
+        14px;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      text-decoration: none;
+      text-decoration:
+        none;
     }
-
 
     .cdms-contact-button:hover {
       background:
@@ -1033,138 +1419,75 @@
     }
 
 
-
-    /* =====================================================
-       HDR COURSE CARDS
-       ===================================================== */
-
-    .course-intro {
-      margin: 0 0 20px;
-      color: #555555;
-      line-height: 1.6;
-    }
-
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .course-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .course-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .course-code {
-      margin: 0 0 14px;
-      color: #666666;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .course-card ul {
-      margin: 14px 0 18px;
-      padding-left: 20px;
-      color: #4f4f4f;
-      line-height: 1.55;
-    }
-
-    .course-card li {
-      margin-bottom: 7px;
-    }
-
-    .course-card .card-actions {
-      margin-top: auto;
-      padding-top: 4px;
-    }
-
-    .course-card .course-secondary-link {
-      border: 1px solid var(--wsu-red);
-      background: white;
-      color: var(--wsu-red);
-    }
-
-    .course-card .course-secondary-link:hover {
-      background: #fff3f7;
-    }
-
-
     /* =====================================================
        MOBILE
        ===================================================== */
 
-    @media
-    (max-width: 640px) {
+    @media (max-width: 640px) {
 
       header.banner-slider {
-        min-height: 300px;
+        min-height:
+          300px;
 
         padding:
           30px 20px;
       }
 
-
       .course-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
-
 
       .banner-slide {
         background-position:
           center center;
       }
 
-
       .banner-indicators {
-        left: 20px;
+        left:
+          20px;
 
-        bottom: 15px;
+        bottom:
+          15px;
       }
-
 
       header.banner-slider .hub-title {
-        font-size: 34px;
+        font-size:
+          34px;
       }
-
 
       header.banner-slider .school-title {
-        font-size: 21px;
+        font-size:
+          21px;
       }
-
 
       header.banner-slider .header-content p {
-        font-size: 14px;
+        font-size:
+          14px;
       }
-
 
       .cdms-search-modal {
-        padding: 12px;
+        padding:
+          12px;
       }
-
 
       .cdms-search-dialog {
         padding:
           26px 20px;
 
-        border-radius: 10px;
+        border-radius:
+          10px;
       }
-
 
       .cdms-search-header h2 {
-        font-size: 25px;
+        font-size:
+          25px;
       }
-
 
       .cdms-search-form {
         grid-template-columns:
           1fr;
       }
-
 
       .cdms-search-field.full-width,
       .cdms-search-actions {
@@ -1172,12 +1495,10 @@
           auto;
       }
 
-
       .cdms-search-actions {
         flex-direction:
           column;
       }
-
 
       .cdms-contact-row {
         align-items:
@@ -1186,7 +1507,6 @@
         flex-direction:
           column;
       }
-
 
       .supervisor-contact {
         align-items:
@@ -1199,16 +1519,15 @@
     }
 
 
-
     /* =====================================================
        REDUCED MOTION
        ===================================================== */
 
-    @media
-    (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion: reduce) {
 
       .banner-slide {
-        transition: none;
+        transition:
+          none;
 
         transform:
           none !important;
@@ -1221,9 +1540,7 @@
 </head>
 
 
-
 <body>
-
 
 
   <!-- =====================================================
@@ -1235,41 +1552,31 @@
     id="bannerSlider"
   >
 
-
     <div
       class="banner-slide banner-slide-1 active"
       aria-hidden="true"
-    >
-    </div>
-
+    ></div>
 
     <div
       class="banner-slide banner-slide-2"
       aria-hidden="true"
-    >
-    </div>
-
+    ></div>
 
     <div
       class="banner-slide banner-slide-3"
       aria-hidden="true"
-    >
-    </div>
-
+    ></div>
 
 
     <div class="header-content">
-
 
       <h1 class="hub-title">
         HDR and Supervisor Connect at CDMS
       </h1>
 
-
       <h2 class="school-title">
         School of Computer, Data and Mathematical Sciences
       </h2>
-
 
       <p>
         Western Sydney University |
@@ -1277,9 +1584,7 @@
         PhD Research Profiles
       </p>
 
-
     </div>
-
 
 
     <div
@@ -1287,43 +1592,37 @@
       aria-label="Banner images"
     >
 
-
       <button
         class="banner-indicator active"
         type="button"
         data-slide="0"
         aria-label="Show banner style 1"
-      >
-      </button>
-
+      ></button>
 
       <button
         class="banner-indicator"
         type="button"
         data-slide="1"
         aria-label="Show banner style 2"
-      >
-      </button>
-
+      ></button>
 
       <button
         class="banner-indicator"
         type="button"
         data-slide="2"
         aria-label="Show banner style 3"
-      >
-      </button>
-
+      ></button>
 
     </div>
-
 
   </header>
 
 
+  <!-- =====================================================
+       NAVIGATION
+       ===================================================== -->
 
   <nav>
-
 
     <a
       href="https://www.westernsydney.edu.au/schools/socdms"
@@ -1333,7 +1632,6 @@
       CDMS Home
     </a>
 
-
     <a
       href="https://www.westernsydney.edu.au/schools/socdms/research"
       target="_blank"
@@ -1341,7 +1639,6 @@
     >
       Research
     </a>
-
 
     <a
       href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research"
@@ -1351,7 +1648,6 @@
       Higher Degree Research
     </a>
 
-
     <a
       href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor"
       target="_blank"
@@ -1359,7 +1655,6 @@
     >
       Find a Supervisor
     </a>
-
 
     <a
       href="https://www.westernsydney.edu.au/schools/socdms/our-people"
@@ -1369,7 +1664,6 @@
       Our People
     </a>
 
-
     <a
       href="https://www.westernsydney.edu.au/schools/socdms/contact-us"
       target="_blank"
@@ -1378,19 +1672,26 @@
       Contact
     </a>
 
-
   </nav>
 
 
+  <!-- =====================================================
+       PAGE LAYOUT
+       ===================================================== -->
 
   <div class="layout">
 
 
+    <!-- ===================================================
+         LEFT SIDEBAR
+         =================================================== -->
+
     <aside>
 
 
-      <div class="supervisor-finder">
+      <!-- FIND SUPERVISOR -->
 
+      <div class="supervisor-finder">
 
         <button
           type="button"
@@ -1398,13 +1699,36 @@
           id="focusSupervisorBtn"
           aria-controls="supervisorSelect"
         >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="10" cy="8" r="3.2"></circle>
-            <path d="M4.5 18.5c.7-3.1 2.6-4.8 5.5-4.8 2 0 3.5.8 4.5 2.2"></path>
-            <circle cx="17.5" cy="16.5" r="3"></circle>
-            <path d="m19.7 18.7 2.1 2.1"></path>
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle
+              cx="10"
+              cy="8"
+              r="3.2"
+            ></circle>
+
+            <path
+              d="M4.5 18.5c.7-3.1 2.6-4.8 5.5-4.8 2 0 3.5.8 4.5 2.2"
+            ></path>
+
+            <circle
+              cx="17.5"
+              cy="16.5"
+              r="3"
+            ></circle>
+
+            <path
+              d="m19.7 18.7 2.1 2.1"
+            ></path>
           </svg>
-          <span>Find a Supervisor</span>
+
+          <span>
+            Find a Supervisor
+          </span>
+
         </button>
 
 
@@ -1422,16 +1746,13 @@
           aria-label="Select a supervisor"
         >
 
-
           <option value="">
             Select a Supervisor
           </option>
 
-
           <option value="kenan">
             Associate Professor Kenan M. Matawie
           </option>
-
 
           <option value="rodrigo">
             Rodrigo Neves Calheiros
@@ -1545,35 +1866,18 @@
             Jinglei Lv
           </option>
 
-
         </select>
-
-
-        <a
-          class="sidebar-shortcut profile-shortcut"
-          href="#phd-researcher-profiles"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="10" cy="8" r="3.2"></circle>
-            <path d="M4.5 18.5c.7-3.1 2.6-4.8 5.5-4.8 2 0 3.5.8 4.5 2.2"></path>
-            <circle cx="17.5" cy="16.5" r="3"></circle>
-            <path d="m19.7 18.7 2.1 2.1"></path>
-          </svg>
-          <span>PhD Researcher Profiles</span>
-        </a>
-
 
       </div>
 
 
+      <!-- SEARCH CDMS -->
 
       <div class="sidebar-section">
-
 
         <h2>
           Search CDMS
         </h2>
-
 
         <p>
           Search for supervisors,
@@ -1582,7 +1886,6 @@
           research degrees
           or academic profiles.
         </p>
-
 
         <button
           class="search-button"
@@ -1593,19 +1896,59 @@
         </button>
 
 
+        <!-- PHD PROFILE SHORTCUT MOVED HERE -->
+
+        <a
+          class="sidebar-shortcut profile-shortcut"
+          href="#phd-researcher-profiles"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <circle
+              cx="10"
+              cy="8"
+              r="3.2"
+            ></circle>
+
+            <path
+              d="M4.5 18.5c.7-3.1 2.6-4.8 5.5-4.8 2 0 3.5.8 4.5 2.2"
+            ></path>
+
+            <circle
+              cx="17.5"
+              cy="16.5"
+              r="3"
+            ></circle>
+
+            <path
+              d="m19.7 18.7 2.1 2.1"
+            ></path>
+
+          </svg>
+
+          <span>
+            PhD Researcher Profiles
+          </span>
+
+        </a>
+
       </div>
 
 
+      <!-- QUICK LINKS -->
 
       <div class="sidebar-section">
-
 
         <h2>
           Quick Links
         </h2>
 
-
         <p>
+
           <a
             href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor"
             target="_blank"
@@ -1613,10 +1956,11 @@
           >
             Supervisor List
           </a>
+
         </p>
 
-
         <p>
+
           <a
             href="https://www.westernsydney.edu.au/future/study/how-to-apply/higher-degree-research-candidates/find-a-supervisor"
             target="_blank"
@@ -1624,10 +1968,11 @@
           >
             Available Research Projects
           </a>
+
         </p>
 
-
         <p>
+
           <a
             href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/"
             target="_blank"
@@ -1635,6 +1980,7 @@
           >
             Researcher Profiles
           </a>
+
         </p>
 
 
@@ -1645,7 +1991,6 @@
 
         <div class="publication-year-links">
 
-
           <a
             href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/publications/?publicationYear=2026"
             target="_blank"
@@ -1653,7 +1998,6 @@
           >
             2026
           </a>
-
 
           <a
             href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/publications/?publicationYear=2025"
@@ -1663,7 +2007,6 @@
             2025
           </a>
 
-
           <a
             href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/publications/?publicationYear=2024"
             target="_blank"
@@ -1672,27 +2015,27 @@
             2024
           </a>
 
-
         </div>
 
-
       </div>
-
 
     </aside>
 
 
+    <!-- ===================================================
+         MAIN CONTENT
+         =================================================== -->
 
     <main>
 
 
-      <section class="hero">
+      <!-- INTRODUCTION -->
 
+      <section class="hero">
 
         <h2>
           CDMS Research Hub
         </h2>
-
 
         <p>
           This page provides a simple research-facing
@@ -1704,28 +2047,30 @@
           and PhD researcher profiles.
         </p>
 
-
       </section>
 
 
+      <!-- =================================================
+           HDR COURSES
+           ================================================= -->
 
       <section class="hdr-courses">
-
 
         <h2>
           Higher Degree Research Courses and Pathways
         </h2>
 
-
         <p class="course-intro">
-          Explore research-focused postgraduate pathways combining advanced study,
-          research training and supervised research, with opportunities to progress
-          towards doctoral research.
+          Explore research-focused postgraduate pathways combining
+          advanced study, research training and supervised research,
+          with opportunities to progress towards doctoral research.
         </p>
 
 
         <div class="course-grid">
 
+
+          <!-- MICTRES -->
 
           <div class="card course-card">
 
@@ -1734,7 +2079,8 @@
             </span>
 
             <h3>
-              Master of Information and Communications Technology (Research)
+              Master of Information and Communications Technology
+              (Research)
             </h3>
 
             <p class="course-code">
@@ -1742,17 +2088,39 @@
             </p>
 
             <p>
-              Advanced ICT coursework followed by supervised research training,
-              designed to build research capability in the ICT discipline.
+              Advanced ICT coursework followed by supervised
+              research training, designed to build research
+              capability in the ICT discipline.
             </p>
 
             <ul>
-              <li>Two and a half years full-time.</li>
-              <li>Combines advanced ICT study with supervised research training.</li>
-              <li>Supports research projects within the University or with external organisations.</li>
-              <li>Useful pathway towards Higher Degree Research and PhD study.</li>
-              <li>Relevant to computing, systems, data, cloud, networks and related ICT research.</li>
+
+              <li>
+                Two and a half years full-time.
+              </li>
+
+              <li>
+                Combines advanced ICT study with supervised
+                research training.
+              </li>
+
+              <li>
+                Supports research projects within the University
+                or with external organisations.
+              </li>
+
+              <li>
+                Useful pathway towards Higher Degree Research
+                and PhD study.
+              </li>
+
+              <li>
+                Relevant to computing, systems, data, cloud,
+                networks and related ICT research.
+              </li>
+
             </ul>
+
 
             <div class="card-actions">
 
@@ -1764,11 +2132,11 @@
                 Course Details
               </a>
 
+
               <a
                 class="course-secondary-link"
-                href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#supervisorSelect"
+                onclick="goToSupervisorSelector(event)"
               >
                 Find a Supervisor
               </a>
@@ -1778,6 +2146,7 @@
           </div>
 
 
+          <!-- MAIRES -->
 
           <div class="card course-card">
 
@@ -1786,7 +2155,8 @@
             </span>
 
             <h3>
-              Master of Artificial Intelligence (Research)
+              Master of Artificial Intelligence
+              (Research)
             </h3>
 
             <p class="course-code">
@@ -1794,17 +2164,41 @@
             </p>
 
             <p>
-              Advanced Artificial Intelligence study followed by supervised AI research,
-              building both technical foundations and discipline-specific research skills.
+              Advanced Artificial Intelligence study followed
+              by supervised AI research, building both
+              technical foundations and discipline-specific
+              research skills.
             </p>
 
             <ul>
-              <li>Two and a half years full-time, with part-time study also available where applicable.</li>
-              <li>Includes advanced AI, machine learning, natural language processing and AI ethics.</li>
-              <li>Includes a full-time-equivalent year of supervised AI research training.</li>
-              <li>Research may be undertaken within the University or with external industry partners.</li>
-              <li>Provides preparation for PhD research and AI-focused research careers.</li>
+
+              <li>
+                Two and a half years full-time, with part-time
+                study also available where applicable.
+              </li>
+
+              <li>
+                Includes advanced AI, machine learning,
+                natural language processing and AI ethics.
+              </li>
+
+              <li>
+                Includes a full-time-equivalent year of
+                supervised AI research training.
+              </li>
+
+              <li>
+                Research may be undertaken within the
+                University or with external industry partners.
+              </li>
+
+              <li>
+                Provides preparation for PhD research and
+                AI-focused research careers.
+              </li>
+
             </ul>
+
 
             <div class="card-actions">
 
@@ -1816,11 +2210,11 @@
                 Course Details
               </a>
 
+
               <a
                 class="course-secondary-link"
-                href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#supervisorSelect"
+                onclick="goToSupervisorSelector(event)"
               >
                 Find a Supervisor
               </a>
@@ -1830,6 +2224,7 @@
           </div>
 
 
+          <!-- MRES -->
 
           <div class="card course-card">
 
@@ -1846,17 +2241,41 @@
             </p>
 
             <p>
-              A broad research-training pathway combining structured research preparation
-              with an independently supervised Higher Degree Research project.
+              A broad research-training pathway combining
+              structured research preparation with an
+              independently supervised Higher Degree
+              Research project.
             </p>
 
             <ul>
-              <li>Stage 1 develops research methods, disciplinary depth and research communication.</li>
-              <li>Stage 2 centres on a supervised Higher Degree Research project.</li>
-              <li>Includes a substantial thesis or equivalent research output.</li>
-              <li>Supports research across a broad range of CDMS-related disciplines.</li>
-              <li>Designed as strong preparation for PhD study and research careers.</li>
+
+              <li>
+                Stage 1 develops research methods,
+                disciplinary depth and research communication.
+              </li>
+
+              <li>
+                Stage 2 centres on a supervised
+                Higher Degree Research project.
+              </li>
+
+              <li>
+                Includes a substantial thesis or equivalent
+                research output.
+              </li>
+
+              <li>
+                Supports research across a broad range
+                of CDMS-related disciplines.
+              </li>
+
+              <li>
+                Designed as strong preparation for PhD study
+                and research careers.
+              </li>
+
             </ul>
+
 
             <div class="card-actions">
 
@@ -1868,11 +2287,11 @@
                 Course Details
               </a>
 
+
               <a
                 class="course-secondary-link"
-                href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#supervisorSelect"
+                onclick="goToSupervisorSelector(event)"
               >
                 Find a Supervisor
               </a>
@@ -1881,20 +2300,19 @@
 
           </div>
 
-
         </div>
 
-
       </section>
-
 
 
       <br>
 
 
+      <!-- =================================================
+           RESEARCH PROJECT AREAS
+           ================================================= -->
 
       <section>
-
 
         <h2>
           Undergoing Research Project Areas
@@ -1906,23 +2324,19 @@
 
           <div class="card">
 
-
             <span class="tag">
               Digital Health
             </span>
 
-
             <h3>
               Longitudinal Health Data Analytics
             </h3>
-
 
             <p>
               Research using repeated patient measures,
               digital health platforms
               and statistical modelling.
             </p>
-
 
             <div class="card-actions">
 
@@ -1936,23 +2350,18 @@
 
             </div>
 
-
           </div>
 
 
-
           <div class="card">
-
 
             <span class="tag">
               AI
             </span>
 
-
             <h3>
               Artificial Intelligence and Machine Learning
             </h3>
-
 
             <p>
               Research in intelligent systems,
@@ -1960,7 +2369,6 @@
               explainable AI
               and applied computing.
             </p>
-
 
             <div class="card-actions">
 
@@ -1974,23 +2382,18 @@
 
             </div>
 
-
           </div>
 
 
-
           <div class="card">
-
 
             <span class="tag">
               Statistics
             </span>
 
-
             <h3>
               Mathematics and Statistical Modelling
             </h3>
-
 
             <p>
               Research in statistical methods,
@@ -1998,7 +2401,6 @@
               uncertainty
               and applied mathematics.
             </p>
-
 
             <div class="card-actions">
 
@@ -2012,23 +2414,21 @@
 
             </div>
 
-
           </div>
-
 
         </div>
 
-
       </section>
-
 
 
       <br>
 
 
+      <!-- =================================================
+           PHD RESEARCHER PROFILES
+           ================================================= -->
 
       <section id="phd-researcher-profiles">
-
 
         <h2>
           PhD Researcher Profiles
@@ -2040,9 +2440,7 @@
 
           <div class="card">
 
-
             <div class="researcher-header">
-
 
               <img
                 src="images/profile1.jpg"
@@ -2050,25 +2448,19 @@
                 class="researcher-image"
               >
 
-
               <div>
-
 
                 <span class="tag">
                   PhD Researcher
                 </span>
 
-
                 <h3>
                   Kunal Rehani
                 </h3>
 
-
               </div>
 
-
             </div>
-
 
             <p>
               Research focus:
@@ -2078,9 +2470,7 @@
               and healthcare analytics.
             </p>
 
-
             <div class="card-actions">
-
 
               <a
                 href="https://kunalrehani.com"
@@ -2090,7 +2480,6 @@
                 View Profile
               </a>
 
-
               <a
                 href="https://researchers.westernsydney.edu.au/en/publications/a-reproducible-analytics-workflow-for-longitudinal-healthcare-dig/"
                 target="_blank"
@@ -2099,19 +2488,14 @@
                 Research
               </a>
 
-
             </div>
-
 
           </div>
 
 
-
           <div class="card">
 
-
             <div class="researcher-header">
-
 
               <img
                 src="images/profile2.jpg"
@@ -2119,25 +2503,19 @@
                 class="researcher-image"
               >
 
-
               <div>
-
 
                 <span class="tag">
                   Add Profile
                 </span>
 
-
                 <h3>
                   PhD Researcher Name
                 </h3>
 
-
               </div>
 
-
             </div>
-
 
             <p>
               Add research area,
@@ -2145,7 +2523,6 @@
               supervisor and publication
               or profile link here.
             </p>
-
 
             <a
               href="https://researchers.westernsydney.edu.au/"
@@ -2155,16 +2532,12 @@
               Profile Link
             </a>
 
-
           </div>
-
 
 
           <div class="card">
 
-
             <div class="researcher-header">
-
 
               <img
                 src="images/profile3.jpg"
@@ -2172,25 +2545,19 @@
                 class="researcher-image"
               >
 
-
               <div>
-
 
                 <span class="tag">
                   Add Profile
                 </span>
 
-
                 <h3>
                   PhD Researcher Name
                 </h3>
 
-
               </div>
 
-
             </div>
-
 
             <p>
               Add research area,
@@ -2198,7 +2565,6 @@
               keywords and contact
               or profile link here.
             </p>
-
 
             <a
               href="https://www.westernsydney.edu.au/schools/socdms/our-people"
@@ -2208,22 +2574,20 @@
               Profile Link
             </a>
 
-
           </div>
-
 
         </div>
 
-
       </section>
 
-
     </main>
-
 
   </div>
 
 
+  <!-- =====================================================
+       SUPERVISOR PROFILE POPUP
+       ===================================================== -->
 
   <div
     id="supervisorModal"
@@ -2233,9 +2597,7 @@
     aria-labelledby="supervisorName"
   >
 
-
     <div class="supervisor-modal-content">
-
 
       <span
         class="close-supervisor"
@@ -2249,7 +2611,6 @@
 
       <div class="supervisor-profile-header">
 
-
         <img
           id="supervisorPhoto"
           src=""
@@ -2257,28 +2618,20 @@
           class="supervisor-photo"
         >
 
-
         <div>
 
-
-          <h2 id="supervisorName">
-          </h2>
-
+          <h2 id="supervisorName"></h2>
 
           <p id="supervisorTitle">
             Research Supervisor
           </p>
 
-
         </div>
-
 
       </div>
 
 
-
       <div class="supervisor-body">
-
 
         <div
           id="demoNotice"
@@ -2293,74 +2646,62 @@
           Available for Supervision
         </h3>
 
-
         <div
           id="supervisionAvailability"
           class="supervision-badges"
-        >
-        </div>
+        ></div>
 
 
         <h3>
           Disciplines / Research Themes
         </h3>
 
-
-        <p id="supervisorThemes">
-        </p>
+        <p id="supervisorThemes"></p>
 
 
         <h3>
           Research Interests and Expertise
         </h3>
 
-
-        <p id="supervisorInterests">
-        </p>
+        <p id="supervisorInterests"></p>
 
 
         <h3>
           Current Research / Projects
         </h3>
 
-
-        <ol id="supervisorProjects">
-        </ol>
+        <ol id="supervisorProjects"></ol>
 
 
         <h3>
           Contact
         </h3>
 
-
         <div
           id="supervisorContact"
           class="supervisor-contact"
-        >
-        </div>
+        ></div>
 
 
         <h3>
           Profile Links
         </h3>
 
-
         <div
           id="supervisorLinks"
           class="supervisor-links"
-        >
-        </div>
-
+        ></div>
 
       </div>
 
-
     </div>
-
 
   </div>
 
 
+  <!-- =====================================================
+       SEARCH CDMS POPUP
+       ===================================================== -->
 
   <div
     id="cdmsSearchModal"
@@ -2368,12 +2709,10 @@
     aria-hidden="true"
   >
 
-
     <div
       id="cdmsSearchBackdrop"
       class="cdms-search-backdrop"
-    >
-    </div>
+    ></div>
 
 
     <div
@@ -2382,7 +2721,6 @@
       aria-modal="true"
       aria-labelledby="cdmsSearchTitle"
     >
-
 
       <button
         type="button"
@@ -2396,11 +2734,9 @@
 
       <div class="cdms-search-header">
 
-
         <h2 id="cdmsSearchTitle">
           Search CDMS
         </h2>
-
 
         <p>
           Search research pages,
@@ -2409,9 +2745,7 @@
           Higher Degree Research programs.
         </p>
 
-
       </div>
-
 
 
       <div class="cdms-search-form">
@@ -2419,11 +2753,9 @@
 
         <div class="cdms-search-field full-width">
 
-
           <label for="cdmsKeyword">
             Keyword
           </label>
-
 
           <input
             id="cdmsKeyword"
@@ -2432,18 +2764,14 @@
             autocomplete="off"
           >
 
-
         </div>
-
 
 
         <div class="cdms-search-field">
 
-
           <label for="cdmsName">
             Search by Name
           </label>
-
 
           <input
             id="cdmsName"
@@ -2452,161 +2780,127 @@
             autocomplete="off"
           >
 
-
         </div>
 
 
-
         <div class="cdms-search-field">
-
 
           <label for="cdmsDegree">
             Search by Research Degree
           </label>
 
-
           <select id="cdmsDegree">
-
 
             <option value="">
               Any research degree
             </option>
 
-
             <option value="mres">
               Master of Research (MRes)
             </option>
-
 
             <option value="mphil">
               Master of Philosophy (MPhil)
             </option>
 
-
             <option value="mict">
-              Master of Information and Communications Technology (Research) (MICTres)
+              Master of Information and Communications Technology
+              (Research) (MICTres)
             </option>
-
 
             <option value="mai">
-              Master of Artificial Intelligence (Research) (MAIres)
+              Master of Artificial Intelligence
+              (Research) (MAIres)
             </option>
-
 
             <option value="phd">
               Doctor of Philosophy (PhD)
             </option>
 
-
           </select>
-
 
         </div>
 
 
-
         <div class="cdms-search-field full-width">
-
 
           <label for="cdmsArea">
             Search by Area / Subject
           </label>
 
-
           <select id="cdmsArea">
-
 
             <option value="">
               Any research area
             </option>
 
-
             <optgroup label="CDMS Research Areas">
-
 
               <option value="Computer Science">
                 Computer Science
               </option>
 
-
               <option value="Information Systems">
                 Information Systems
               </option>
-
 
               <option value="Data Science">
                 Data Science
               </option>
 
-
               <option value="Statistics">
                 Statistics
               </option>
-
 
               <option value="Mathematics Statistics">
                 Mathematics &amp; Statistics
               </option>
 
-
               <option value="Health Informatics">
                 Health Informatics
               </option>
-
 
               <option value="Artificial Intelligence">
                 Artificial Intelligence
               </option>
 
-
               <option value="Machine Learning">
                 Machine Learning
               </option>
-
 
               <option value="Distributed Systems">
                 Distributed Systems
               </option>
 
-
               <option value="Cyber Security">
                 Cyber Security
               </option>
-
 
             </optgroup>
 
 
             <optgroup label="CDMS Research Themes">
 
-
               <option value="theme-sustainability">
                 Computing for Sustainability and Equality
               </option>
-
 
               <option value="theme-foundations">
                 Foundations, Algorithms and Discovery
               </option>
 
-
               <option value="theme-intelligent">
                 Intelligent Decision Making
               </option>
 
-
             </optgroup>
 
-
           </select>
-
 
         </div>
 
 
-
         <div class="cdms-search-actions">
-
 
           <button
             type="button"
@@ -2616,7 +2910,6 @@
             Search CDMS
           </button>
 
-
           <button
             type="button"
             class="cdms-reset-search"
@@ -2625,24 +2918,18 @@
             Clear
           </button>
 
-
         </div>
-
 
       </div>
 
 
-
       <div class="cdms-search-links">
-
 
         <h3>
           Research Links
         </h3>
 
-
         <div class="cdms-link-grid">
-
 
           <a
             href="https://www.westernsydney.edu.au/schools/socdms/research"
@@ -2652,7 +2939,6 @@
             CDMS Research
           </a>
 
-
           <a
             href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research"
             target="_blank"
@@ -2660,7 +2946,6 @@
           >
             Higher Degree Research
           </a>
-
 
           <a
             href="https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor"
@@ -2670,7 +2955,6 @@
             Find a Supervisor
           </a>
 
-
           <a
             href="https://researchers.westernsydney.edu.au/"
             target="_blank"
@@ -2678,7 +2962,6 @@
           >
             Research Profiles
           </a>
-
 
           <a
             href="https://researchers.westernsydney.edu.au/en/organisations/school-of-computer-data-mathematical-sciences-2/"
@@ -2688,16 +2971,12 @@
             CDMS Research Profiles
           </a>
 
-
         </div>
-
 
       </div>
 
 
-
       <div class="cdms-search-contacts">
-
 
         <h3>
           Contacts
@@ -2709,7 +2988,6 @@
 
           <div class="cdms-contact-row">
 
-
             <div class="cdms-contact-person">
 
               <strong>
@@ -2717,12 +2995,11 @@
               </strong>
 
               <span>
-                Dean - School of Computer,
+                Dean — School of Computer,
                 Data and Mathematical Sciences
               </span>
 
             </div>
-
 
             <a
               class="cdms-contact-button"
@@ -2731,13 +3008,10 @@
               Contact
             </a>
 
-
           </div>
 
 
-
           <div class="cdms-contact-row">
-
 
             <div class="cdms-contact-person">
 
@@ -2751,7 +3025,6 @@
 
             </div>
 
-
             <a
               class="cdms-contact-button"
               href="mailto:K.Matawie@westernsydney.edu.au"
@@ -2759,13 +3032,10 @@
               Contact
             </a>
 
-
           </div>
 
 
-
           <div class="cdms-contact-row">
-
 
             <div class="cdms-contact-person">
 
@@ -2779,7 +3049,6 @@
 
             </div>
 
-
             <a
               class="cdms-contact-button"
               href="mailto:A.Ginige@westernsydney.edu.au"
@@ -2787,13 +3056,10 @@
               Contact
             </a>
 
-
           </div>
 
 
-
           <div class="cdms-contact-row">
-
 
             <div class="cdms-contact-person">
 
@@ -2807,7 +3073,6 @@
 
             </div>
 
-
             <a
               class="cdms-contact-button"
               href="mailto:L.Alkhouri@westernsydney.edu.au"
@@ -2815,34 +3080,32 @@
               Contact
             </a>
 
-
           </div>
-
 
         </div>
 
-
       </div>
 
-
     </div>
-
 
   </div>
 
 
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
   <footer>
-
     Unofficial research profile page for
     CDMS-related HDR navigation.
-
     For official information,
     visit Western Sydney University.
-
   </footer>
 
 
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
   <script>
 
@@ -2856,16 +3119,13 @@
         ".banner-slide"
       );
 
-
     const bannerIndicators =
       document.querySelectorAll(
         ".banner-indicator"
       );
 
-
     let currentBannerSlide =
       0;
-
 
     let bannerTimer;
 
@@ -2874,9 +3134,7 @@
       index
     ) {
 
-
       bannerSlides.forEach(
-
         function(slide) {
 
           slide.classList.remove(
@@ -2884,12 +3142,10 @@
           );
 
         }
-
       );
 
 
       bannerIndicators.forEach(
-
         function(indicator) {
 
           indicator.classList.remove(
@@ -2897,7 +3153,6 @@
           );
 
         }
-
       );
 
 
@@ -2922,21 +3177,16 @@
         "active"
       );
 
-
     }
 
 
     function nextBannerSlide() {
 
-
       const nextSlide =
-
         (
           currentBannerSlide + 1
         )
-
         %
-
         bannerSlides.length;
 
 
@@ -2944,12 +3194,10 @@
         nextSlide
       );
 
-
     }
 
 
     function startBannerRotation() {
-
 
       clearInterval(
         bannerTimer
@@ -2958,33 +3206,23 @@
 
       bannerTimer =
         setInterval(
-
           nextBannerSlide,
-
           4500
-
         );
-
 
     }
 
 
     bannerIndicators.forEach(
-
       function(
         indicator
       ) {
 
-
         indicator.addEventListener(
-
           "click",
-
           function() {
 
-
             const slideIndex =
-
               Number(
                 this.dataset.slide
               );
@@ -2997,23 +3235,18 @@
 
             startBannerRotation();
 
-
           }
-
         );
 
-
       }
-
     );
 
 
     startBannerRotation();
 
 
-
     /* =====================================================
-       SIDEBAR SHORTCUTS
+       SUPERVISOR SELECTOR NAVIGATION
        ===================================================== */
 
     const focusSupervisorBtn =
@@ -3022,8 +3255,7 @@
       );
 
 
-    function openSupervisorPicker() {
-
+    function focusAndOpenSupervisorSelect() {
 
       const select =
         document.getElementById(
@@ -3034,24 +3266,95 @@
       select.focus();
 
 
+      select.classList.add(
+        "supervisor-highlight"
+      );
+
+
+      setTimeout(
+        function() {
+
+          select.classList.remove(
+            "supervisor-highlight"
+          );
+
+        },
+        1800
+      );
+
+
       if (
         typeof select.showPicker ===
         "function"
       ) {
 
-
         try {
 
           select.showPicker();
 
-        } catch (error) {
+        }
+        catch (error) {
 
-          /* Browser fallback: focus remains on selector. */
+          /*
+             Some browsers restrict
+             programmatic opening.
+             Focus remains on the dropdown.
+          */
 
         }
 
       }
 
+    }
+
+
+    function openSupervisorPicker() {
+
+      focusAndOpenSupervisorSelect();
+
+    }
+
+
+    /*
+       Used by the three Find a Supervisor
+       links inside the HDR course cards.
+    */
+
+    function goToSupervisorSelector(
+      event
+    ) {
+
+      if (event) {
+        event.preventDefault();
+      }
+
+
+      const select =
+        document.getElementById(
+          "supervisorSelect"
+        );
+
+
+      select.scrollIntoView({
+        behavior:
+          "smooth",
+
+        block:
+          "center",
+
+        inline:
+          "nearest"
+      });
+
+
+      setTimeout(
+        function() {
+
+          focusAndOpenSupervisorSelect();
+
+        },
+        650
+      );
 
     }
 
@@ -3063,225 +3366,153 @@
       );
 
 
-
     /* =====================================================
        SEARCH POPUP
        ===================================================== */
 
     const cdmsSearchModal =
-
       document.getElementById(
         "cdmsSearchModal"
       );
 
 
     const openCdmsSearchBtn =
-
       document.getElementById(
         "openCdmsSearchBtn"
       );
 
 
     const closeCdmsSearchBtn =
-
       document.getElementById(
         "closeCdmsSearchBtn"
       );
 
 
     const cdmsSearchBackdrop =
-
       document.getElementById(
         "cdmsSearchBackdrop"
       );
 
 
     const runCdmsSearchBtn =
-
       document.getElementById(
         "runCdmsSearchBtn"
       );
 
 
     const resetCdmsSearchBtn =
-
       document.getElementById(
         "resetCdmsSearchBtn"
       );
 
 
-
     const cdmsDegreeLinks = {
 
-
       mres:
-
         "https://www.westernsydney.edu.au/future/study/courses/research/master-of-research",
 
-
       mphil:
-
         "https://www.westernsydney.edu.au/future/study/courses/research/master-of-philosophy",
 
-
       mict:
-
         "https://www.westernsydney.edu.au/future/study/courses/research/master-of-information-and-communications-technology-research",
 
-
       mai:
-
         "https://www.westernsydney.edu.au/future/study/courses/research/master-of-artificial-intelligence-research",
 
-
       phd:
-
         "https://www.westernsydney.edu.au/future/study/courses/research/doctor-of-philosophy"
 
-
     };
-
 
 
     const cdmsThemeLinks = {
 
-
       "theme-sustainability":
-
         "https://www.westernsydney.edu.au/schools/socdms/research/computing-for-sustainability-and-equality",
 
-
       "theme-foundations":
-
         "https://www.westernsydney.edu.au/schools/socdms/research/foundations-algorithms-and-discovery",
 
-
       "theme-intelligent":
-
         "https://www.westernsydney.edu.au/schools/socdms/research/intelligent-decision-making"
 
-
     };
-
 
 
     const cdmsAreaLinks = {
 
-
       "Computer Science":
-
         "https://www.westernsydney.edu.au/schools/socdms/research",
-
 
       "Information Systems":
-
         "https://www.westernsydney.edu.au/schools/socdms/research",
-
 
       "Data Science":
-
         "https://www.westernsydney.edu.au/schools/socdms/research",
-
 
       "Statistics":
-
         "https://www.westernsydney.edu.au/schools/socdms/research/foundations-algorithms-and-discovery",
-
 
       "Mathematics Statistics":
-
         "https://www.westernsydney.edu.au/schools/socdms/research/foundations-algorithms-and-discovery",
 
-
       "Health Informatics":
-
         "https://www.westernsydney.edu.au/schools/socdms/research",
-
 
       "Artificial Intelligence":
-
         "https://www.westernsydney.edu.au/schools/socdms/research/intelligent-decision-making",
-
 
       "Machine Learning":
-
         "https://www.westernsydney.edu.au/schools/socdms/research/intelligent-decision-making",
 
-
       "Distributed Systems":
-
         "https://www.westernsydney.edu.au/schools/socdms/research",
 
-
       "Cyber Security":
-
         "https://www.westernsydney.edu.au/schools/socdms/research"
 
-
     };
-
 
 
     const academicLinks = {
 
-
       "kurt langfeld":
-
         "https://researchers.westernsydney.edu.au/en/persons/kurt-langfeld/",
-
 
       "professor kurt langfeld":
-
         "https://researchers.westernsydney.edu.au/en/persons/kurt-langfeld/",
 
-
       "kenan matawie":
-
         "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/",
-
 
       "kenan m matawie":
-
         "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/",
-
 
       "kenan m. matawie":
-
         "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/",
-
 
       "associate professor kenan matawie":
-
         "https://researchers.westernsydney.edu.au/en/persons/kenan-matawie/",
 
-
       "athula ginige":
-
         "https://researchers.westernsydney.edu.au/en/persons/athula-ginige/",
 
-
       "professor athula ginige":
-
         "https://researchers.westernsydney.edu.au/en/persons/athula-ginige/"
-
 
     };
 
 
-
     const cdmsSupervisorDirectory =
-
       "https://www.westernsydney.edu.au/schools/socdms/research/higher-degree-research/finding-a-supervisor";
 
 
     const researchProfilesBase =
-
       "https://researchers.westernsydney.edu.au/";
 
 
-
     function openCdmsSearch() {
-
 
       cdmsSearchModal
         .classList
@@ -3302,9 +3533,7 @@
 
 
       setTimeout(
-
         function() {
-
 
           document
             .getElementById(
@@ -3312,20 +3541,14 @@
             )
             .focus();
 
-
         },
-
         100
-
       );
-
 
     }
 
 
-
     function closeCdmsSearch() {
-
 
       cdmsSearchModal
         .classList
@@ -3344,13 +3567,10 @@
       document.body.style.overflow =
         "";
 
-
     }
 
 
-
     function resetCdmsSearch() {
-
 
       document
         .getElementById(
@@ -3390,46 +3610,38 @@
         )
         .focus();
 
-
     }
-
 
 
     function openResearchSearch(
       query
     ) {
 
-
       const cleanQuery =
-
         query.trim();
 
 
-      if (!cleanQuery) {
-
+      if (
+        !cleanQuery
+      ) {
 
         window.open(
-
           researchProfilesBase,
-
           "_blank",
-
           "noopener,noreferrer"
-
         );
 
-
         return;
-
 
       }
 
 
       const slug =
-
         cleanQuery
           .toLowerCase()
-          .normalize("NFD")
+          .normalize(
+            "NFD"
+          )
           .replace(
             /[\u0300-\u036f]/g,
             ""
@@ -3445,34 +3657,25 @@
 
 
       const searchUrl =
-
-        "https://researchers.westernsydney.edu.au/en/searchAll/index/" +
-
+        "https://researchers.westernsydney.edu.au/en/searchAll/index/"
+        +
         encodeURIComponent(
           slug
         );
 
 
       window.open(
-
         searchUrl,
-
         "_blank",
-
         "noopener,noreferrer"
-
       );
-
 
     }
 
 
-
     function runCdmsSearch() {
 
-
       const keyword =
-
         document
           .getElementById(
             "cdmsKeyword"
@@ -3482,7 +3685,6 @@
 
 
       const academicName =
-
         document
           .getElementById(
             "cdmsName"
@@ -3492,7 +3694,6 @@
 
 
       const degree =
-
         document
           .getElementById(
             "cdmsDegree"
@@ -3501,7 +3702,6 @@
 
 
       const area =
-
         document
           .getElementById(
             "cdmsArea"
@@ -3509,12 +3709,11 @@
           .value;
 
 
-
-      if (academicName) {
-
+      if (
+        academicName
+      ) {
 
         const normalisedName =
-
           academicName
             .toLowerCase()
             .trim();
@@ -3526,41 +3725,34 @@
           ]
         ) {
 
-
           window.open(
-
             academicLinks[
               normalisedName
             ],
-
             "_blank",
-
             "noopener,noreferrer"
-
           );
-
 
           return;
 
-
         }
-
 
       }
 
 
-
       if (
-        academicName ||
+        academicName
+        ||
         keyword
       ) {
-
 
         const searchTerms =
           [];
 
 
-        if (academicName) {
+        if (
+          academicName
+        ) {
 
           searchTerms.push(
             academicName
@@ -3569,7 +3761,9 @@
         }
 
 
-        if (keyword) {
+        if (
+          keyword
+        ) {
 
           searchTerms.push(
             keyword
@@ -3579,7 +3773,8 @@
 
 
         if (
-          area &&
+          area
+          &&
           !area.startsWith(
             "theme-"
           )
@@ -3593,118 +3788,86 @@
 
 
         openResearchSearch(
-
           searchTerms.join(
             " "
           )
-
         );
 
-
         return;
-
 
       }
 
 
-
       if (
-        degree &&
+        degree
+        &&
         cdmsDegreeLinks[
           degree
         ]
       ) {
 
-
         window.open(
-
           cdmsDegreeLinks[
             degree
           ],
-
           "_blank",
-
           "noopener,noreferrer"
-
         );
 
-
         return;
-
 
       }
 
 
-
       if (
-        area &&
+        area
+        &&
         cdmsThemeLinks[
           area
         ]
       ) {
 
-
         window.open(
-
           cdmsThemeLinks[
             area
           ],
-
           "_blank",
-
           "noopener,noreferrer"
-
         );
 
-
         return;
-
 
       }
 
 
-
       if (
-        area &&
+        area
+        &&
         cdmsAreaLinks[
           area
         ]
       ) {
 
-
         window.open(
-
           cdmsAreaLinks[
             area
           ],
-
           "_blank",
-
           "noopener,noreferrer"
-
         );
 
-
         return;
-
 
       }
 
 
-
       window.open(
-
         cdmsSupervisorDirectory,
-
         "_blank",
-
         "noopener,noreferrer"
-
       );
 
-
     }
-
 
 
     openCdmsSearchBtn
@@ -3742,48 +3905,35 @@
       );
 
 
-
     [
       "cdmsKeyword",
       "cdmsName"
     ]
     .forEach(
-
       function(id) {
-
 
         document
           .getElementById(
             id
           )
           .addEventListener(
-
             "keydown",
-
             function(event) {
-
 
               if (
                 event.key ===
                 "Enter"
               ) {
 
-
                 runCdmsSearch();
-
 
               }
 
-
             }
-
           );
 
-
       }
-
     );
-
 
 
     /* =====================================================
@@ -3856,32 +4006,29 @@
     }
 
 
-
     const supervisors = {
 
 
-      kenan: {
+      /* =================================================
+         KENAN
+         ================================================= */
 
+      kenan: {
 
         name:
           "Associate Professor Kenan M. Matawie",
 
-
         title:
           "Director, HDR & Honours",
-
 
         photo:
           "images/supervisors/kenan-matawie.jpg",
 
-
         email:
           "K.Matawie@westernsydney.edu.au",
 
-
         demo:
           false,
-
 
         availability: [
 
@@ -3897,14 +4044,11 @@
 
         ],
 
-
         themes:
           "Statistics – Advanced Statistical Modelling, Methodological Innovation, Data-Driven Decision Intelligence",
 
-
         interests:
           "Application and development of statistical modelling and advanced statistical methodologies across multidisciplinary domains using real-world data. Research interests include health analytics, artificial intelligence, machine learning, predictive modelling, data visualisation, heat map and spatial analytics, information retrieval, large language models (LLMs), computational linguistics, and data-driven decision-making. The research focuses on developing accurate, robust, interpretable, and scalable statistical and AI models, integrating advanced computational approaches to improve prediction, knowledge discovery, and evidence-based outcomes.",
-
 
         projects: [
 
@@ -3919,7 +4063,6 @@
           "Document Modelling, Parameter Estimation and Intelligent Information Retrieval"
 
         ],
-
 
         links: [
 
@@ -3949,9 +4092,7 @@
 
         ]
 
-
       },
-
 
 
       rodrigo:
@@ -3991,7 +4132,6 @@
         ),
 
 
-
       bahman:
 
         makeSupervisor(
@@ -4019,7 +4159,6 @@
           ]
 
         ),
-
 
 
       james:
@@ -4067,7 +4206,6 @@
         ),
 
 
-
       mengfan:
 
         makeSupervisor(
@@ -4105,7 +4243,6 @@
         ),
 
 
-
       junda:
 
         makeSupervisor(
@@ -4133,7 +4270,6 @@
           ]
 
         ),
-
 
 
       zhigang:
@@ -4165,7 +4301,6 @@
         ),
 
 
-
       rhys:
 
         makeSupervisor(
@@ -4193,7 +4328,6 @@
           ]
 
         ),
-
 
 
       anupama:
@@ -4225,7 +4359,6 @@
         ),
 
 
-
       weisheng:
 
         makeSupervisor(
@@ -4253,7 +4386,6 @@
           ]
 
         ),
-
 
 
       jolin:
@@ -4285,7 +4417,6 @@
         ),
 
 
-
       farnaz:
 
         makeSupervisor(
@@ -4315,7 +4446,6 @@
         ),
 
 
-
       rosalind:
 
         makeSupervisor(
@@ -4343,7 +4473,6 @@
           ]
 
         ),
-
 
 
       quang:
@@ -4383,7 +4512,6 @@
         ),
 
 
-
       nabil:
 
         makeSupervisor(
@@ -4413,7 +4541,6 @@
         ),
 
 
-
       jim:
 
         makeSupervisor(
@@ -4431,7 +4558,6 @@
           []
 
         ),
-
 
 
       tomas:
@@ -4463,7 +4589,6 @@
         ),
 
 
-
       nicholas:
 
         makeSupervisor(
@@ -4491,7 +4616,6 @@
           ]
 
         ),
-
 
 
       ana:
@@ -4523,7 +4647,6 @@
         ),
 
 
-
       dongmo:
 
         makeSupervisor(
@@ -4541,7 +4664,6 @@
           []
 
         ),
-
 
 
       omar:
@@ -4573,7 +4695,6 @@
         ),
 
 
-
       vernon:
 
         makeSupervisor(
@@ -4601,7 +4722,6 @@
           ]
 
         ),
-
 
 
       thanhtung:
@@ -4633,7 +4753,6 @@
         ),
 
 
-
       azadeh:
 
         makeSupervisor(
@@ -4661,7 +4780,6 @@
           ]
 
         ),
-
 
 
       laurence:
@@ -4709,7 +4827,6 @@
         ),
 
 
-
       farhad:
 
         makeSupervisor(
@@ -4747,7 +4864,6 @@
         ),
 
 
-
       liwan:
 
         makeSupervisor(
@@ -4783,7 +4899,6 @@
           ]
 
         ),
-
 
 
       evan:
@@ -4831,7 +4946,6 @@
         ),
 
 
-
       jinglei:
 
         makeSupervisor(
@@ -4860,36 +4974,34 @@
 
         )
 
-
     };
 
 
+    /* =====================================================
+       OPEN SUPERVISOR PROFILE
+       ===================================================== */
 
     function openSupervisorProfile(
       id
     ) {
 
-
       if (
-        !id ||
+        !id
+        ||
         !supervisors[
           id
         ]
       ) {
 
-
         return;
-
 
       }
 
 
       const supervisor =
-
         supervisors[
           id
         ];
-
 
 
       document
@@ -4897,9 +5009,7 @@
           "supervisorName"
         )
         .textContent =
-
         supervisor.name;
-
 
 
       document
@@ -4907,13 +5017,10 @@
           "supervisorTitle"
         )
         .textContent =
-
         supervisor.title;
 
 
-
       const photo =
-
         document
           .getElementById(
             "supervisorPhoto"
@@ -4921,52 +5028,33 @@
 
 
       photo.src =
-
         supervisor.photo;
 
 
       photo.alt =
-
         supervisor.name;
 
 
-
       const demoNotice =
-
         document
           .getElementById(
             "demoNotice"
           );
 
 
-      if (
+      demoNotice
+        .style
+        .display =
         supervisor.demo
-      ) {
+        ?
+        "block"
+        :
+        "none";
 
 
-        demoNotice
-          .style
-          .display =
-
-          "block";
-
-
-      } else {
-
-
-        demoNotice
-          .style
-          .display =
-
-          "none";
-
-
-      }
-
-
+      /* AVAILABILITY */
 
       const availability =
-
         document
           .getElementById(
             "supervisionAvailability"
@@ -4980,12 +5068,9 @@
       supervisor
         .availability
         .forEach(
-
           function(item) {
 
-
             const badge =
-
               document
                 .createElement(
                   "span"
@@ -4993,12 +5078,10 @@
 
 
             badge.className =
-
               "supervision-badge";
 
 
             badge.textContent =
-
               item;
 
 
@@ -5007,35 +5090,33 @@
                 badge
               );
 
-
           }
-
         );
 
 
+      /* THEMES */
 
       document
         .getElementById(
           "supervisorThemes"
         )
         .textContent =
-
         supervisor.themes;
 
 
+      /* INTERESTS */
 
       document
         .getElementById(
           "supervisorInterests"
         )
         .textContent =
-
         supervisor.interests;
 
 
+      /* PROJECTS */
 
       const projects =
-
         document
           .getElementById(
             "supervisorProjects"
@@ -5049,12 +5130,9 @@
       supervisor
         .projects
         .forEach(
-
           function(project) {
 
-
             const li =
-
               document
                 .createElement(
                   "li"
@@ -5062,7 +5140,6 @@
 
 
             li.textContent =
-
               project;
 
 
@@ -5071,15 +5148,13 @@
                 li
               );
 
-
           }
-
         );
 
 
+      /* CONTACT */
 
       const contact =
-
         document
           .getElementById(
             "supervisorContact"
@@ -5091,18 +5166,12 @@
 
 
       if (
-
         supervisor.email
-
         &&
-
         !supervisor.demo
-
       ) {
 
-
         const emailButton =
-
           document
             .createElement(
               "a"
@@ -5110,24 +5179,22 @@
 
 
         emailButton.href =
-
-          "mailto:" +
+          "mailto:"
+          +
           supervisor.email;
 
 
         emailButton.className =
-
           "supervisor-contact-button";
 
 
         emailButton.textContent =
-
           "Contact";
 
 
         emailButton.title =
-
-          "Email " +
+          "Email "
+          +
           supervisor.name;
 
 
@@ -5136,9 +5203,7 @@
         );
 
 
-
         const emailText =
-
           document
             .createElement(
               "span"
@@ -5146,12 +5211,10 @@
 
 
         emailText.className =
-
           "supervisor-email-text";
 
 
         emailText.textContent =
-
           supervisor.email;
 
 
@@ -5159,12 +5222,11 @@
           emailText
         );
 
+      }
 
-      } else {
-
+      else {
 
         const unavailable =
-
           document
             .createElement(
               "p"
@@ -5172,12 +5234,10 @@
 
 
         unavailable.className =
-
           "supervisor-contact-unavailable";
 
 
         unavailable.textContent =
-
           "Contact information available soon — watch this space.";
 
 
@@ -5185,13 +5245,12 @@
           unavailable
         );
 
-
       }
 
 
+      /* PROFILE LINKS */
 
       const links =
-
         document
           .getElementById(
             "supervisorLinks"
@@ -5209,9 +5268,7 @@
         0
       ) {
 
-
         const text =
-
           document
             .createElement(
               "p"
@@ -5219,7 +5276,6 @@
 
 
         text.textContent =
-
           "Profile links are not currently available.";
 
 
@@ -5227,19 +5283,16 @@
           text
         );
 
+      }
 
-      } else {
-
+      else {
 
         supervisor
           .links
           .forEach(
-
             function(link) {
 
-
               const anchor =
-
                 document
                   .createElement(
                     "a"
@@ -5247,22 +5300,18 @@
 
 
               anchor.href =
-
                 link.url;
 
 
               anchor.target =
-
                 "_blank";
 
 
               anchor.rel =
-
                 "noopener noreferrer";
 
 
               anchor.textContent =
-
                 link.label;
 
 
@@ -5270,18 +5319,15 @@
                 anchor
               );
 
-
             }
-
           );
-
 
       }
 
 
+      /* OPEN */
 
       const modal =
-
         document
           .getElementById(
             "supervisorModal"
@@ -5297,7 +5343,6 @@
 
 
       const modalContent =
-
         document
           .querySelector(
             ".supervisor-modal-content"
@@ -5307,13 +5352,14 @@
       modalContent.scrollTop =
         0;
 
-
     }
 
 
+    /* =====================================================
+       CLOSE SUPERVISOR PROFILE
+       ===================================================== */
 
     function closeSupervisorProfile() {
-
 
       document
         .getElementById(
@@ -5321,7 +5367,6 @@
         )
         .style
         .display =
-
         "none";
 
 
@@ -5334,23 +5379,18 @@
           "supervisorSelect"
         )
         .value =
-
         "";
-
 
     }
 
 
+    /* CLICK OUTSIDE */
 
     window.addEventListener(
-
       "click",
-
       function(event) {
 
-
         const modal =
-
           document
             .getElementById(
               "supervisorModal"
@@ -5362,25 +5402,19 @@
           modal
         ) {
 
-
           closeSupervisorProfile();
-
 
         }
 
-
       }
-
     );
 
 
+    /* ESCAPE KEY */
 
     document.addEventListener(
-
       "keydown",
-
       function(event) {
-
 
         if (
           event.key !==
@@ -5400,18 +5434,14 @@
             )
         ) {
 
-
           closeCdmsSearch();
 
-
           return;
-
 
         }
 
 
         const modal =
-
           document
             .getElementById(
               "supervisorModal"
@@ -5423,15 +5453,11 @@
           "block"
         ) {
 
-
           closeSupervisorProfile();
-
 
         }
 
-
       }
-
     );
 
 
